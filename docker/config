@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# Add to docker group
+sudo usermod --append --groups docker $USER
+
+# Enable docker
+sudo systemctl enable $app.service

@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+sudo rm -rf /usr/local/bin/$app
+sudo curl -sSLf https://cdn.radix10.cn/sedutil -o $_
+sudo chmod +x $_

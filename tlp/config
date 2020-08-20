@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+sudo systemctl enable tlp.service
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket

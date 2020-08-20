@@ -1,0 +1,108 @@
+font pango:JetBrainsMono 8
+default_border pixel 0
+
+set $win   Mod4
+set $ctrl  Control
+set $left  h
+set $down  j
+set $up    k
+set $right l
+set $ws1   "1:1"
+set $ws2   "2:2"
+set $ws3   "3:3"
+set $ws4   "4:4"
+set $ws5   "5:5"
+set $ws6   "6:6"
+set $ws7   "7:7"
+set $ws8   "8:8"
+set $ws9   "9:9"
+set $ws10  "10:0"
+
+bindsym $win+i                exec --no-startup-id i3-sensible-terminal
+bindsym $win+d                exec --no-startup-id "rofi -show combi"
+
+bindsym $win+r                mode "resize"
+bindsym $win+e                layout toggle split
+bindsym $win+w                layout tabbed
+bindsym $win+s                layout stacking
+bindsym $win+f                fullscreen toggle
+bindsym $win+semicolon        split v
+bindsym $win+apostrophe       split h
+floating_modifier             $win
+
+bindsym $win+space            focus mode_toggle
+bindsym $win+a                focus parent
+#bindsym $win+d               focus child
+bindsym $win+$left            focus left
+bindsym $win+$down            focus down
+bindsym $win+$up              focus up
+bindsym $win+$right           focus right
+
+bindsym $win+Shift+q          kill
+bindsym $win+Shift+f          floating toggle
+bindsym $win+Shift+c          reload
+bindsym $win+Shift+r          restart
+bindsym $win+Shift+e          exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $ctrl+1               workspace $ws1
+bindsym $ctrl+2               workspace $ws2
+bindsym $ctrl+3               workspace $ws3
+bindsym $ctrl+4               workspace $ws4
+bindsym $ctrl+5               workspace $ws5
+bindsym $ctrl+6               workspace $ws6
+bindsym $ctrl+7               workspace $ws7
+bindsym $ctrl+8               workspace $ws8
+bindsym $ctrl+9               workspace $ws9
+bindsym $ctrl+0               workspace $ws10
+bindsym $win+$ctrl+$left      move left
+bindsym $win+$ctrl+$down      move down
+bindsym $win+$ctrl+$up        move up
+bindsym $win+$ctrl+$right     move right
+bindsym $win+$ctrl+1          move container to workspace $ws1
+bindsym $win+$ctrl+2          move container to workspace $ws2
+bindsym $win+$ctrl+3          move container to workspace $ws3
+bindsym $win+$ctrl+4          move container to workspace $ws4
+bindsym $win+$ctrl+5          move container to workspace $ws5
+bindsym $win+$ctrl+6          move container to workspace $ws6
+bindsym $win+$ctrl+7          move container to workspace $ws7
+bindsym $win+$ctrl+8          move container to workspace $ws8
+bindsym $win+$ctrl+9          move container to workspace $ws9
+bindsym $win+$ctrl+0          move container to workspace $ws10
+
+bindsym XF86AudioRaiseVolume  exec amixer set Master 5+ && killall -USR1 i3status
+bindsym XF86AudioLowerVolume  exec amixer set Master 5- && killall -USR1 i3status
+bindsym XF86AudioMute         exec amixer set Master toggle && amixer set Speaker unmute && killall -USR1 i3status
+bindsym XF86MonBrightnessDown exec light -U 0.5
+bindsym XF86MonBrightnessUp   exec light -A 0.5
+bindsym $win+Print            exec maim ~/pictures/$(date +%Y%m%d-%H%M%S).png
+bindsym Print --release       exec maim -s ~/pictures/$(date +%Y%m%d-%H%M%S).png
+bindsym $win+Shift+d          exec switheme dark
+bindsym $win+Shift+l          exec switheme light
+bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
+bindsym $win+o                exec chromium
+bindsym --release $win+p      exec xcolor -s
+
+client.focused          #fbf1c7 #fbf1c7 #3c3836
+client.focused_inactive #fbf1c7 #fbf1c7 #7c6f64
+client.unfocused        #ebdbb2 #ebdbb2 #7c6f64
+
+mode "resize" {
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $down resize grow height 10 px or 10 ppt
+        bindsym $up resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+        bindsym Escape mode "default"
+}
+
+bar {
+  status_command i3status
+  strip_workspace_numbers yes
+  colors {
+    background #ebdbb2
+    statusline #3c3836
+    separator  #bdae93
+    focused_workspace  #fbf1c7 #fbf1c7 #3c3836
+    active_workspace   #fbf1c7 #fbf1c7 #7c6f64
+    inactive_workspace #ebdbb2 #ebdbb2 #7c6f64
+  }
+}

@@ -1,0 +1,56 @@
+# file: /
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10
+# owner: radix10
+# group: users
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/pictures
+# owner: radix10
+# group: users
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10/.fehbg
+# owner: radix10
+# group: users
+user::rwx
+group::r-x
+other::r--
+
+# file: /home/radix10/pictures/wallpaper_dark.png
+# owner: radix10
+# group: users
+user::rw-
+group::r--
+other::r--
+
+# file: /home/radix10/pictures/wallpaper_light.png
+# owner: radix10
+# group: users
+user::rw-
+group::r--
+other::r--
+
+# file: /home/radix10/pictures/wallpaper.png
+# owner: radix10
+# group: users
+user::rw-
+group::r--
+other::r--
+

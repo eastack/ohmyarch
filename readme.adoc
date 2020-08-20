@@ -1,0 +1,122 @@
+= Oh My Arch
+
+一个用Shell编写的Arch Linux配置管理工具。
+
+用来管理系统配置文件及命令，支持文件备份还原（本地/远程）。
+配合Git可实现配置文件的版本控制。
+
+== 依赖
+
+* rsync
+* sudo
+* zsh
+
+== 下载
+
+[source, bash]
+----
+curl -sSL https://github.com/rwrr/ohmyarch/archive/master.tar.gz | tar -zxv
+----
+
+== 使用
+
+=== 命令格式
+
+[source, bash]
+----
+./ohmyarch ACTION [APPNAME]...
+----
+
+=== 安装 Arch Linux
+
+NOTE: 很抱歉，当前实现不支持自定义用户名，只能指定为 `radix10` 这是个BUG，暂时没时间改，还没想到比较好的解决方法。
+
+1. 设置环境变量
++
+[source, bash]
+----
+export NAME='radix10'   # 新建用户的用户名
+export DISK='/dev/sda'  # 系统安装目标磁盘
+----
++
+2. 执行脚本进行系统安装
++
+NOTE: 脚本将会格式化 `DISK` 环境变量指定磁盘，使用前前请务必阅读脚本 `archlinux/install` 。
++
+[source, bash]
+----
+./ohmyarch install archlinux
+----
++
+3. 重启进入新系统
++
+NOTE: 所创建用户其密码为空， `root` 密码被设置为随机值。
++
+[source, bash]
+----
+reboot
+----
+
+=== 安装应用
+
+比如想要管理对 `zsh` 的安装。
+首先确保我们当前处于 `ohmyarch` 目录，然后创建一个 `zsh` 文件夹。
+再将 `.ohmyarch/setup` 链接到 `zsh` 文件夹下
+[source, bash]
+----
+mkdir zsh
+ln -sf .ohmyarch/setup zsh/setup
+----
+最后执行
+[source, bash]
+----
+./ohmyarch setup zsh
+----
+便会执行 `ohmyarch` 中 `setup` 函数进行对 `zsh` 的安装。
+
+=== 备份还原
+
+这里我们还以 `zsh` 为例，如果要管理其配置文件，则需要在 `zsh` 下创建 `.archives` 文件夹，再在其下创建任意命名的文件夹用来存储要备份的配置如文件、文件权限等。
+
+1. 配置
++
+然后将要进行管理文件的绝对路径添加到 `./zsh/.archives/local/file` 文件中
++
+2. 备份
++
+文件将保持其路径备份到 `./zsh/.archives/local` 目录下。
+而其相关权限也被保存于 `./zsh/.archives/local/facl` 文件中。
++
+[source, bash]
+----
+./ohmyarch backup zsh
+----
++
+3. 还原
++
+将会还原文件内容和其相关权限信息。
++
+[source, bash]
+----
+./ohmyarch restore zsh
+----
+
+如果不指定应用名称的话默认对所有应用执行操作
+
+.比如将安装所有配置的应用
+[source, bash]
+----
+./ohmyarch setup
+----
+
+== 待办
+
+* [ ] 实现屏幕亮度及色温自动调节
+* [ ] 重写Switheme
+* [ ] 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
+* [ ] 解放左手大拇指，左手大拇指用的太多了，即便使用静电容键盘还是手疼
+* [ ] 为常用仓库添加从github到gitee的镜像
+* [ ] 能不能用GPT-3写一个Cron表达式生成器
+* [ ] 为libvirt配置各种启动服务
+* [ ] It seems you're using 'idea.system.path' property to specify the location of the caches directory. In 2020.1, default locations of application directories were changed. For compatibility, the IDE picked the old location of logs, but to avoid any ambiguity in the future (and to get rid of this warning) please set 'idea.log.path' property, too.
+* [ ] 想试试 firefox send + split + parallel 的威力

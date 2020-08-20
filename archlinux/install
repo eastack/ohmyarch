@@ -1,0 +1,99 @@
+#!/usr/bin/env zsh
+
+setopt errexit
+setopt nounset
+setopt pipefail
+
+# Update the system clock
+timedatectl set-ntp true
+
+# Partition the disks
+parted -s -a optimal $DISK \
+       mklabel gpt \
+       unit mib \
+       mkpart primary 1 129 \
+       name 1 boot \
+       mkpart primary 129 100% \
+       name 2 rootfs \
+       set 1 boot on 
+
+# Format the partitions
+# format boot partition
+mkfs.fat -F 32 $DISK*1
+# format root partition
+mkfs.ext4 -F $DISK*2
+
+# Mount the file systems
+# mount root partition
+mount $DISK*2 /mnt
+# create boot directory
+mkdir /mnt/boot
+# mount boot partition
+mount $DISK*1 /mnt/boot
+
+# Set mirrors
+curl -sSL 'https://www.archlinux.org/mirrorlist/?country=CN&protocol=https' > /etc/pacman.d/mirrorlist
+sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist
+
+# Install essential packages
+pacstrap /mnt base linux linux-firmware intel-ucode iwd crda sudo zsh neovim rsync man-db
+
+# Fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+
+# Time zone
+arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc
+
+# Localization
+arch-chroot /mnt sed -i 's/^#en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen
+arch-chroot /mnt sed -i 's/^#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen
+arch-chroot /mnt locale-gen
+cat <<EOF > /mnt/etc/locale.conf
+LANG=zh_CN.utf8
+LC_MESSAGES=en_US.utf8
+EOF
+
+# Network configuration
+arch-chroot /mnt systemctl enable iwd.service systemd-networkd.service systemd-resolved.service
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+cat <<EOF > /mnt/etc/systemd/network/wireless-dhcp.network
+[Match]
+Name=wlan0
+
+[Network]
+DHCP=yes
+EOF
+cat <<EOF > /mnt/etc/hostname
+x1
+EOF
+cat <<EOF > /mnt/etc/hosts
+127.0.0.1 localhost
+::1       localhost
+127.0.0.1 x1 x1
+EOF
+
+# Root password
+arch-chroot /mnt echo root:$(openssl rand -base64 32) | chpasswd
+ 
+# Boot loader
+arch-chroot /mnt bootctl install
+cat <<EOF > /mnt/boot/loader/entries/arch.conf
+title      Arch Linux
+linux      /vmlinuz-linux
+initrd     /intel-ucode.img
+initrd     /initramfs-linux.img
+options    root=$(ls $DISK*2) rw
+EOF
+cat <<EOF > /mnt/boot/loader/loader.conf
+default arch
+timeout 0
+editor no
+EOF
+
+# Create user
+arch-chroot /mnt useradd -m -g users -G wheel $NAME
+arch-chroot /mnt passwd -d $NAME
+
+# Enable sudo
+arch-chroot /mnt sed -i 's/^# %wheel ALL=(ALL) ALL$/%wheel ALL=(ALL) ALL/g' /etc/sudoers

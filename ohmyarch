@@ -1,0 +1,60 @@
+#!/usr/bin/env zsh
+
+setopt errexit
+setopt nounset
+setopt pipefail
+setopt extendedglob
+
+readonly ROOT=$(realpath $(dirname $0))
+readonly RDES=${RDES:-$ROOT}
+readonly RSH='ssh -o ControlMaster=auto -o ControlPersist=1M -S ~/.%C'
+
+function setup() {
+  sudo pacman -S --noconfirm --needed $@
+}
+
+function backup() {
+  for archive ($@) {
+    for filepath ($(envsubst < $archive/file)) {
+      until [[ $filepath == / ]] echo ${filepath::=$filepath:h}
+    } | sort | uniq | getfacl -p - > $archive/facl
+    envsubst < $archive/file | sort | getfacl -pR - >> $archive/facl
+    envsubst < $archive/file | rsync -rl --files-from=- / $archive
+  }
+}
+
+function restore() {
+  for archive ($@) {
+    envsubst < $archive/file | sudo rsync -rl --files-from=- $archive /
+    sudo setfacl --restore=$archive/facl
+  }
+}
+
+function upload() {
+  for archive ($@) {
+    echo $archive | rsync -rle $RSH --files-from=- . $RDES/$app
+  }
+}
+
+function download() {
+  for archive ($@) {
+    echo $archive | rsync -rle $RSH --files-from=- $RDES/$app .
+  }
+}
+
+function clean() {
+  for archive ($@) {
+    rm -rf $archive/^file
+  }
+}
+
+function ohmyarch() {
+  local app
+  for app (${@:2}) {
+    pushd $ROOT/$app
+    test -f $1 && source $1
+    popd
+  }
+}
+
+ohmyarch $1 ${2:-$(basename -a $ROOT/*/)} ${@:3}

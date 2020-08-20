@@ -1,0 +1,6 @@
+[user]
+	name = radix10
+	email = admin@radix10.me
+[core]
+	quotepath = false
+	editor = nvim

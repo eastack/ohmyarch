@@ -1,0 +1,3 @@
+$HOME/.config/nvim/init.vim
+$HOME/.config/nvim/plug.vim
+$HOME/.config/nvim/base.vim

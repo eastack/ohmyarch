@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+sudo chsh $USER -s $(which zsh)
+REMOTE=https://gitee.com/radix10/ohmyzsh sh -c "$(curl -fsSL https://gitee.com/radix10/ohmyzsh/raw/master/tools/install.sh)"
+cd $ZSH
+git remote delete origin
+git remote add origin $REMOTE

@@ -1,0 +1,35 @@
+# file: /
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10
+# owner: radix10
+# group: users
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.gradle
+# owner: radix10
+# group: users
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10/.gradle/init.gradle
+# owner: radix10
+# group: users
+user::rw-
+group::r--
+other::r--
+
