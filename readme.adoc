@@ -29,8 +29,6 @@ curl -sSL https://github.com/rwrr/ohmyarch/archive/master.tar.gz | tar -zxv
 
 === 安装 Arch Linux
 
-NOTE: 很抱歉，当前实现不支持自定义用户名，只能指定为 `radix10` 这是个BUG，暂时没时间改，还没想到比较好的解决方法。
-
 1. 设置环境变量
 +
 [source, bash]

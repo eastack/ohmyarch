@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh
-
-vagrant plugin install \
-	--plugin-clean-sources \
-	--plugin-source https://gems.ruby-china.com/ \
-	vagrant-libvirt
