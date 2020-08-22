@@ -1,1 +1,1 @@
-setup $app qemu dnsmasq ebtables openbsd-netcat
+setup $app qemu dnsmasq ebtables openbsd-netcat edk2-ovmf
