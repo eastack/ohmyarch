@@ -1,1 +1,1 @@
-../.ohmyarch/setup
+setup $app qemu dnsmasq ebtables openbsd-netcat
