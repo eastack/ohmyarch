@@ -1,11 +1,11 @@
 # Font configuration (JetBrainsMono)
 font:
   normal:
-    family: JetBrainsMono
+    family: JetBrains Mono
   bold:
-    family: JetBrainsMono
+    family: JetBrains Mono
   italic:
-    family: JetBrainsMono
+    family: JetBrains Mono
   size: 10.5
 
 # Colors (Gruvbox light)
