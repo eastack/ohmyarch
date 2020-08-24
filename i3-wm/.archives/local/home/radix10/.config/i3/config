@@ -81,8 +81,8 @@ bindsym XF86AudioLowerVolume  exec amixer set Master 5- && killall -USR1 i3statu
 bindsym XF86AudioMute         exec amixer set Master toggle && amixer set Speaker unmute && killall -USR1 i3status
 bindsym XF86MonBrightnessDown exec light -U 0.5
 bindsym XF86MonBrightnessUp   exec light -A 0.5
-bindsym $win+Print            exec maim ~/pictures/$(date +%Y%m%d-%H%M%S).png
-bindsym Print --release       exec maim -s ~/pictures/$(date +%Y%m%d-%H%M%S).png
+bindsym $win+Print            exec maim ~/pictures/$(date +%m%d-%H%M%S).png
+bindsym Print --release       exec maim -s ~/pictures/$(date +%m%d-%H%M%S).png
 bindsym $win+Shift+d          exec switheme dark
 bindsym $win+Shift+l          exec switheme light
 bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
