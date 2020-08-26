@@ -8,6 +8,8 @@ DOWNLOAD_API='https://data.services.jetbrains.com/products?code=IIU&release.type
 DOWNLOAD_URL=$(curl $DOWNLOAD_API | jq -r '.[0].releases[0].downloads.linux.link')
 
 plug() {
+  trap 'rm -rf "$TEMPDIR"' EXIT
+
   TEMPDIR=$(mktemp -d)
   BUILD=$(cat $HOME/.local/share/idea/build.txt)
 
@@ -18,8 +20,6 @@ plug() {
     -o $TEMPDIR/plug.zip
 
   unar $TEMPDIR/plug.zip -o $HOME/.config/idea/config/plugins/
-
-  rm -rf $TEMPDIR
 }
 
 # IdeaVIM
