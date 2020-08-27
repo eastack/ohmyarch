@@ -19,6 +19,34 @@ user::rwx
 group::---
 other::---
 
+# file: /home/radix10/.config
+# owner: radix10
+# group: users
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.config/idea
+# owner: radix10
+# group: users
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10/.config/idea/config
+# owner: radix10
+# group: users
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10/.config/idea/config/disabled_plugins.txt
+# owner: radix10
+# group: users
+user::rw-
+group::r--
+other::r--
+
 # file: /home/radix10/.ideavimrc
 # owner: radix10
 # group: users

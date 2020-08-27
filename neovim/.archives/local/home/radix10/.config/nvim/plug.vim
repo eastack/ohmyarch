@@ -10,5 +10,4 @@ Plug 'aklt/plantuml-syntax'
 Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
-Plug 'davidhalter/jedi-vim'
 call plug#end()

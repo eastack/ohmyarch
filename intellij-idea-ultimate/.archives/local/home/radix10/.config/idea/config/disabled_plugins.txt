@@ -1,0 +1,6 @@
+AntSupport
+DevKit
+com.android.tools.idea.smali
+org.coffeescript
+org.jetbrains.android
+org.jetbrains.kotlin

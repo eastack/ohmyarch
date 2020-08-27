@@ -1,5 +1,5 @@
 export ZSH="/home/radix10/.oh-my-zsh"
-export TERM="xterm"
+export TERM="xterm-256color"
 
 ZSH_THEME="robbyrussell"
 

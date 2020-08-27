@@ -34,3 +34,7 @@ plug 'cn.wuzhizhan.plugin.mybatis'
 plug 'cn.yiiguxing.plugin.translate'
 # IdeaVim-EasyMotion depend on AceJump
 plug 'AceJump' && plug 'org.jetbrains.IdeaVim-EasyMotion'
+# Gruvbox Theme
+plug 'com.vincentp.gruvbox-theme'
+# Python Support
+plug Pythonid
