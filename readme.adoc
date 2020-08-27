@@ -115,7 +115,5 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 为常用仓库添加从github到gitee的镜像
 * [ ] 能不能用GPT-3写一个Cron表达式生成器
 * [ ] 为libvirt配置各种启动服务
-* [ ] It seems you're using 'idea.system.path' property to specify the location of the caches directory. In 2020.1, default locations of application directories were changed. For compatibility, the IDE picked the old location of logs, but to avoid any ambiguity in the future (and to get rid of this warning) please set 'idea.log.path' property, too.
-* [ ] 想试试 firefox send + split + parallel 的威力
 * [ ] zerotier-one 备份认证信息
 * [ ] asciinema 配置
