@@ -4,3 +4,5 @@
 [core]
 	quotepath = false
 	editor = nvim
+[instaweb]
+	httpd = python
