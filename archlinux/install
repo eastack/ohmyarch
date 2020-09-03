@@ -92,8 +92,8 @@ editor no
 EOF
 
 # Create user
-arch-chroot /mnt useradd -m -g users -G wheel $NAME
-arch-chroot /mnt passwd -d $NAME
+arch-chroot /mnt useradd --create-home --groups wheel $NAME
+arch-chroot /mnt passwd --delete $NAME
 
 # Enable sudo
 arch-chroot /mnt sed -i 's/^# %wheel ALL=(ALL) ALL$/%wheel ALL=(ALL) ALL/g' /etc/sudoers
