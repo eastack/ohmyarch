@@ -1,5 +1,6 @@
 export ZSH="/home/radix10/.oh-my-zsh"
 export TERM="xterm-256color"
+export EDITOR=nvim
 
 ZSH_THEME="robbyrussell"
 
