@@ -5,8 +5,8 @@ exec --no-startup-id ~/.fehbg
 exec --no-startup-id xss-lock -- i3lock -u -i ~/pictures/wallpaper.png
 exec --no-startup-id gost -C ~/.config/gost/config.json
 
-exec_always --no-startup-id fcitx-autostart
-exec_always --no-startup-id sleep 3 && ~/.keymapping
+#exec_always --no-startup-id fcitx-autostart
+#exec_always --no-startup-id sleep 3 && ~/.keymapping
 
 set $win   Mod4
 set $ctrl  Control
@@ -92,6 +92,10 @@ bindsym --release $win+p      exec xcolor -s
 client.focused          #282828 #282828 #ebdbb2
 client.focused_inactive #282828 #282828 #a89984
 client.unfocused        #3c3836 #3c3836 #a89984
+
+for_window [floating] move position center
+for_window [title="Open Files"] fullscreen toggle
+floating_maximum_size 2560 x 1440
 
 mode "resize" {
         bindsym $left resize shrink width 10 px or 10 ppt
