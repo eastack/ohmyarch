@@ -1,5 +1,5 @@
 syntax enable
-set background=dark
+set background=light
 set termguicolors
 set cursorline
 set nu rnu
