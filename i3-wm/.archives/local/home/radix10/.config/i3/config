@@ -5,8 +5,8 @@ exec --no-startup-id ~/.fehbg
 exec --no-startup-id xss-lock -- i3lock -u -i ~/pictures/wallpaper.png
 exec --no-startup-id gost -C ~/.config/gost/config.json
 
-#exec_always --no-startup-id fcitx-autostart
-#exec_always --no-startup-id sleep 3 && ~/.keymapping
+exec_always --no-startup-id fcitx-autostart
+exec_always --no-startup-id sleep 3 && ~/.keymapping
 
 set $win   Mod4
 set $ctrl  Control
