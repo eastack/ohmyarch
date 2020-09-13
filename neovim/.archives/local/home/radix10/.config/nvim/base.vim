@@ -27,3 +27,9 @@ map <C-t> :Tagbar<CR>
 "space to command mode
 nnoremap <space> :
 vnoremap <space> :
+
+lua <<EOF
+local nvim_lsp = require'nvim_lsp'
+nvim_lsp.gopls.setup{}
+nvim_lsp.sumneko_lua.setup{}
+EOF

@@ -1,1 +1,5 @@
+#!/usr/bin/env zsh
+
+sudo curl -sSLf https://cdn.radix10.cn/nvim -o /usr/local/bin/nvim
+sudo chmod +x $_
 setup python-pynvim

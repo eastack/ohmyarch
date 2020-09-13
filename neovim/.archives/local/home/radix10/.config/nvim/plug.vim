@@ -10,4 +10,6 @@ Plug 'aklt/plantuml-syntax'
 Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
+Plug 'nvim-lua/completion-nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
