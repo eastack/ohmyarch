@@ -95,7 +95,7 @@ client.focused_inactive #282828 #282828 #a89984
 client.unfocused        #3c3836 #3c3836 #a89984
 
 for_window [floating] move position center
-for_window [title="Open Files"] fullscreen toggle
+for_window [floating] fullscreen toggle
 floating_maximum_size 2560 x 1440
 
 mode "resize" {
