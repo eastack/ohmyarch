@@ -36,7 +36,7 @@ curl -sSL 'https://www.archlinux.org/mirrorlist/?country=CN&protocol=https' > /e
 sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist
 
 # Install essential packages
-pacstrap /mnt base linux linux-firmware intel-ucode iwd crda sudo zsh neovim rsync man-db
+pacstrap /mnt base linux linux-firmware intel-ucode iwd crda sudo zsh vi rsync man-db
 
 # Fstab
 genfstab -U /mnt >> /mnt/etc/fstab
