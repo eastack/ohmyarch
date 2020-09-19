@@ -116,3 +116,4 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 能不能用GPT-3写一个Cron表达式生成器
 * [ ] zerotier-one 备份认证信息
 * [ ] asciinema 配置
+* [ ] https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues[Mitigating lag issues]

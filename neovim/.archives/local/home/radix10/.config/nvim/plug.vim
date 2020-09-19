@@ -13,4 +13,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'nvim-lua/completion-nvim'
 Plug 'neovim/nvim-lspconfig'
+" On-demand lazy load
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
