@@ -6,3 +6,5 @@
 	editor = nvim
 [instaweb]
 	httpd = python
+[pull]
+	rebase = false
