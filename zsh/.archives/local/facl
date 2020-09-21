@@ -19,6 +19,13 @@ user::rwx
 group::---
 other::---
 
+# file: /home/radix10/.zprofile
+# owner: radix10
+# group: users
+user::rw-
+group::r--
+other::r--
+
 # file: /home/radix10/.zshrc
 # owner: radix10
 # group: users

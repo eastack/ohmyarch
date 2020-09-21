@@ -6,8 +6,6 @@ ZSH_THEME="robbyrussell"
 
 plugins=(git tmux)
 
-path=(~/.local/bin $path)
-
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -20,6 +18,7 @@ bindkey '^f' autosuggest-accept
 
 alias s='sudo '
 alias v='nvim'
+alias d='ydcv'
 alias p='pacman'
 alias t='trans'
 alias r='proxychains -q '
