@@ -1,3 +1,7 @@
+# Set environment variables
+env:
+  TERM: xterm-256color
+
 # Font configuration (JetBrainsMono)
 font:
   normal:
