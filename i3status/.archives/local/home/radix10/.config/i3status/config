@@ -1,52 +1,55 @@
 general {
-        colors = true
-        interval = 5
-        color_good = "#79740e"
-        color_degraded = "#b57614"
-        color_bad = "#9d0006"
+  colors = true
+  interval = 5
+  color_good = "#79740e"
+  color_degraded = "#b57614"
+  color_bad = "#9d0006"
 }
 
-order += "wireless _first_"
-order += "disk /"
 order += "cpu_temperature 0"
 order += "load"
-order += "volume master"
+order += "memory"
 order += "battery all"
+order += "volume master"
+order += "wireless _first_"
 order += "tztime local"
 
 cpu_temperature 0 {
-        format = " %degrees°C"
-        max_threshold = 60
-        path = "/sys/class/thermal/thermal_zone0/temp"
+  format = " %degrees°C"
+  max_threshold = 60
+  path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 wireless _first_ {
-        format_up = " %essid"
-        format_down = ""
+  format_up = " %essid"
+  format_down = ""
 }
 
 battery all {
-        format = " %status%percentage"
-        status_chr = "C"
-        status_bat = "B"
-        status_unk = "S"
-        status_full = "F"
-        low_threshold = 90
+  format = " %status%percentage"
+  status_chr = "C"
+  status_bat = "B"
+  status_unk = "S"
+  status_full = "F"
+  low_threshold = 90
 }
 
 tztime local {
-        format = " %m月%d日 %H:%M"
+  format = " %m月%d日 %H:%M"
 }
 
 load {
-        format = " %1min"
+  format = " %1min"
 }
 
-disk "/" {
-        format = " %avail"
+memory {
+        format = " %free"
+        format_degraded = " %free"
+        threshold_degraded = "20%"
+        threshold_critical = "10%"
 }
 
 volume master {
-        format = " %volume"
-        format_muted = " %volume"
+  format = " %volume"
+  format_muted = "ﱝ %volume"
 }
