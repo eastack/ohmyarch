@@ -26,12 +26,12 @@ plug() {
 plug 'IdeaVIM'
 # Lombok
 plug 'Lombook Plugin'
-# AsciiDoc
+## AsciiDoc
 plug 'org.asciidoctor.intellij.asciidoc'
-# Free MyBatis plugin
+## Free MyBatis plugin
 plug 'cn.wuzhizhan.plugin.mybatis'
 # Translation
-plug 'cn.yiiguxing.plugin.translate'
+#plug 'cn.yiiguxing.plugin.translate'
 # IdeaVim-EasyMotion depend on AceJump
 plug 'AceJump' && plug 'org.jetbrains.IdeaVim-EasyMotion'
 # Python Support
