@@ -43,8 +43,8 @@ load {
 }
 
 memory {
-        format = " %free"
-        format_degraded = " %free"
+        format = " %available"
+        format_degraded = " %available"
         threshold_degraded = "20%"
         threshold_critical = "10%"
 }
