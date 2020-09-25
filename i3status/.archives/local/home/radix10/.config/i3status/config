@@ -6,12 +6,12 @@ general {
   color_bad = "#9d0006"
 }
 
+order += "wireless _first_"
 order += "cpu_temperature 0"
 order += "load"
 order += "memory"
-order += "battery all"
 order += "volume master"
-order += "wireless _first_"
+order += "battery all"
 order += "tztime local"
 
 cpu_temperature 0 {
@@ -26,7 +26,7 @@ wireless _first_ {
 }
 
 battery all {
-  format = " %status%percentage"
+  format = " %status%percentage"
   status_chr = "C"
   status_bat = "B"
   status_unk = "S"
@@ -39,7 +39,7 @@ tztime local {
 }
 
 load {
-  format = " %1min"
+  format = " %1min"
 }
 
 memory {
@@ -51,5 +51,5 @@ memory {
 
 volume master {
   format = " %volume"
-  format_muted = " %volume"
+  format_muted = "× %volume"
 }
