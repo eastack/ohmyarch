@@ -4,7 +4,7 @@ export EDITOR=nvim
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git tmux)
+plugins=(git tmux systemd)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -17,23 +17,15 @@ bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^f' autosuggest-accept
 
 alias s='sudo '
+alias r='proxychains -q '
 alias v='nvim'
 alias d='ydcv'
 alias p='pacman'
 alias t='trans'
-alias r='proxychains -q '
-alias x='xclip -r -selection c'
+alias x='xclip -rmlastnl -selection c'
 alias startx='ssh-agent startx'
 
 unsetopt sharehistory
-
-monitor() {
-  if [[ "$1" == "x" ]] {
-    xrandr --output DP1 --mode 3840x2160 --output eDP1 --off
-  } elif [[ "$1" == "e" ]] {
-    xrandr --output eDP1 --mode 2560x1440 --output DP1 --off
-  }
-}
 
 wifi-switch() {
   iwctl station wlan0 scan
