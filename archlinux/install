@@ -57,12 +57,29 @@ EOF
 # Network configuration
 arch-chroot /mnt systemctl enable iwd.service systemd-networkd.service systemd-resolved.service
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-cat <<EOF > /mnt/etc/systemd/network/wireless-dhcp.network
+cat <<EOF > /mnt/etc/systemd/network/20-ethernet.network
 [Match]
-Name=wlan0
+Name=en*
+Name=eth*
 
 [Network]
 DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCP]
+RouteMetric=512
+EOF
+cat <<EOF > /mnt/etc/systemd/network/20-wireless.network
+[Match]
+Name=wlp*
+Name=wlan*
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCP]
+RouteMetric=1024
 EOF
 cat <<EOF > /mnt/etc/hostname
 x1
