@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 setup jq
-exit
 
 # download latest and unpack
 RELEASE_API='https://data.services.jetbrains.com/products?code=IIU&release.type=release'
