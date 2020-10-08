@@ -1,1 +1,1 @@
-setup $app qemu dnsmasq ebtables openbsd-netcat edk2-ovmf spice-vdagent
+setup $app qemu-headless dnsmasq ebtables openbsd-netcat edk2-ovmf spice-vdagent
