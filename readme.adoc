@@ -117,4 +117,4 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] zerotier-one 备份认证信息
 * [ ] asciinema 配置
 * [ ] https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues[Mitigating lag issues]
-* [ ] 如何设置GTK的主题？
+* [ ] 如何动态修改gtk主题？
