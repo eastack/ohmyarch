@@ -1,27 +1,27 @@
 # file: /
-# owner: root
-# group: root
+# owner: 0
+# group: 0
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home
-# owner: root
-# group: root
+# owner: 0
+# group: 0
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home/radix10
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.gradle
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rwx
 group::r-x
 other::r-x

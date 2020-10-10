@@ -1,20 +1,20 @@
 # file: /
-# owner: root
-# group: root
+# owner: 0
+# group: 0
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc
-# owner: root
-# group: root
+# owner: 0
+# group: 0
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc/modprobe.d
-# owner: root
-# group: root
+# owner: 0
+# group: 0
 user::rwx
 group::r-x
 other::r-x
