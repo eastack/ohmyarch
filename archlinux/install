@@ -90,9 +90,6 @@ cat <<EOF > /mnt/etc/hosts
 127.0.0.1 x1 x1
 EOF
 
-# Root password
-arch-chroot /mnt echo root:$(openssl rand -base64 32) | chpasswd
- 
 # Boot loader
 arch-chroot /mnt bootctl install
 cat <<EOF > /mnt/boot/loader/entries/arch.conf
@@ -110,7 +107,10 @@ EOF
 
 # Create user
 arch-chroot /mnt useradd --create-home --shell /bin/zsh --groups wheel $NAME
-arch-chroot /mnt passwd --delete $NAME
+
+# Set password
+arch-chroot /mnt echo root:$RPWD | chpasswd
+arch-chroot /mnt echo $NAME:$UPWD | chpasswd
 
 # Enable sudo
 arch-chroot /mnt sed -i 's/^# %wheel ALL=(ALL) ALL$/%wheel ALL=(ALL) ALL/g' /etc/sudoers

@@ -33,7 +33,9 @@ curl -sSL https://github.com/rwrr/ohmyarch/archive/master.tar.gz | tar -zxv
 +
 [source, bash]
 ----
-export NAME='radix10'   # 新建用户的用户名
+export NAME='radix10'   # 新建用户用户名
+export UPWD='12345'     # 新建用户密码
+export RPWD='67890'     # ROOT密码
 export DISK='/dev/sda'  # 系统安装目标磁盘
 ----
 +
