@@ -112,12 +112,14 @@ ln -sf .ohmyarch/setup zsh/setup
 == 待办
 
 * [ ] 实现屏幕亮度及色温自动调节
-* [ ] 重写Switheme
+* [ ] 使用 mustache 模板重写 switheme
 * [ ] 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
-* [ ] 为常用仓库添加从github到gitee的镜像
-* [ ] 能不能用GPT-3写一个Cron表达式生成器
+* [ ] 为常用仓库添加从 github 到 gitee 的镜像
+* [ ] 能不能用 GPT-3 写一个 cron 表达式生成器
 * [ ] zerotier-one 备份认证信息
 * [ ] asciinema 配置
 * [ ] https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues[Mitigating lag issues]
-* [ ] 如何动态修改gtk主题？
-* [ ] 当前用户组，貌似有点问题985 or 1000？
+* [ ] 如何动态修改 gtk 主题？
+* [ ] 当前用户组，因该是有问题 should 1000 not 985？
+* [ ] 添加keychain https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
+* [ ] pam gnome keying config?

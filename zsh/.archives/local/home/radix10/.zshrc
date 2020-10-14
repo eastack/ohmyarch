@@ -23,7 +23,6 @@ alias d='ydcv'
 alias p='pacman'
 alias t='trans'
 alias x='xclip -rmlastnl -selection c'
-alias startx='ssh-agent startx'
 
 unsetopt sharehistory
 
