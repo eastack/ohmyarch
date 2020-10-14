@@ -1,0 +1,42 @@
+# file: /
+# owner: 0
+# group: 0
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home
+# owner: 0
+# group: 0
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10
+# owner: 1000
+# group: 985
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.config
+# owner: 1000
+# group: 985
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.config/dunst
+# owner: 1000
+# group: 985
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10/.config/dunst/dunstrc
+# owner: radix10
+# group: users
+user::rw-
+group::r--
+other::r--
+
