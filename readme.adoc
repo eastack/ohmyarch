@@ -123,3 +123,4 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 当前用户组，因该是有问题 should 1000 not 985？
 * [ ] 添加keychain https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
 * [ ] pam gnome keying config?
+* [ ] 实现基于dunst的应量调节和屏幕/键盘亮度调节提示
