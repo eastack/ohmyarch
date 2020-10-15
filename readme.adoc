@@ -124,3 +124,4 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 添加keychain https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
 * [ ] pam gnome keying config?
 * [ ] 实现基于dunst的应量调节和屏幕/键盘亮度调节提示
+* [ ] 平滑的屏幕亮度调节
