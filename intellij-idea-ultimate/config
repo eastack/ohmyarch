@@ -38,3 +38,5 @@ plug 'AceJump' && plug 'org.jetbrains.IdeaVim-EasyMotion'
 plug Pythonid
 # Golang Support
 plug org.jetbrains.plugins.go
+# Kubernetes Support
+plug com.intellij.kubernetes
