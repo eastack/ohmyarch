@@ -3,7 +3,7 @@ configuration {
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-  font: "JetBrainsMono 19";
+  font: "JetBrainsMono 20";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
