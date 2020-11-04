@@ -43,13 +43,13 @@ load {
 }
 
 memory {
-        format = " %available"
-        format_degraded = " %available"
-        threshold_degraded = "20%"
-        threshold_critical = "10%"
+  format = " %available"
+  format_degraded = " %available"
+  threshold_degraded = "20%"
+  threshold_critical = "10%"
 }
 
 volume master {
   format = " %volume"
-  format_muted = "× %volume"
+  format_muted = " %volume"
 }
