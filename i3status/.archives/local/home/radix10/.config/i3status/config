@@ -10,6 +10,7 @@ order += "wireless _first_"
 order += "cpu_temperature 0"
 order += "load"
 order += "memory"
+order += "disk /"
 order += "volume master"
 order += "battery all"
 order += "tztime local"
@@ -26,11 +27,10 @@ wireless _first_ {
 }
 
 battery all {
-  format = " %status%percentage"
-  status_chr = "C"
-  status_bat = "B"
-  status_unk = "S"
-  status_full = "F"
+  format = "%status %percentage"
+  status_chr = ""
+  status_bat = ""
+  status_unk = ""
   low_threshold = 90
 }
 
@@ -40,6 +40,10 @@ tztime local {
 
 load {
   format = " %1min"
+}
+
+disk "/" {
+    format = " %avail"
 }
 
 memory {
