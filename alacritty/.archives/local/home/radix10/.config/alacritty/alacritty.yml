@@ -10,7 +10,7 @@ font:
     family: JetBrains Mono
   italic:
     family: JetBrains Mono
-  size: 10.5
+  size: 10
 
 # Colors (Gruvbox light)
 colors:

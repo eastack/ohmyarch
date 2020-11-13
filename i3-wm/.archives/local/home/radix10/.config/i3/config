@@ -1,4 +1,4 @@
-font pango:JetBrainsMono 8
+font pango:SourceCodePro 8.5
 default_border pixel 0
 
 exec --no-startup-id ~/.fehbg
