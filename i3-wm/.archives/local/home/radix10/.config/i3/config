@@ -1,4 +1,4 @@
-font pango:Cantarell 8.5
+font pango:Hack 8.5
 default_border pixel 0
 
 exec --no-startup-id ~/.fehbg

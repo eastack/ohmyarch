@@ -1,6 +1,7 @@
 setup adobe-source-han-sans-cn-fonts \
   adobe-source-han-serif-cn-fonts \
   ttf-nerd-fonts-symbols-mono \
+  ttf-hack \
   gnu-free-fonts \
   ttf-jetbrains-mono \
   noto-fonts-emoji
