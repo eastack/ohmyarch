@@ -20,15 +20,15 @@ group::---
 other::---
 
 # file: /home/radix10/.zprofile
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/.zshrc
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--

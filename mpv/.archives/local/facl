@@ -34,8 +34,8 @@ group::---
 other::---
 
 # file: /home/radix10/.config/mpv/mpv.conf
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--

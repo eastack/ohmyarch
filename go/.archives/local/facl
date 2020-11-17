@@ -34,8 +34,8 @@ group::r-x
 other::r-x
 
 # file: /home/radix10/.config/go/env
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--

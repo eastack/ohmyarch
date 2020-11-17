@@ -34,15 +34,15 @@ group::---
 other::---
 
 # file: /home/radix10/.config/fcitx/config
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/.config/fcitx/profile
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::---
 other::---

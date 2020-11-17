@@ -20,8 +20,8 @@ group::r-x
 other::r-x
 
 # file: /etc/docker/daemon.json
-# owner: root
-# group: root
+# owner: 0
+# group: 0
 user::rw-
 group::r--
 other::r--

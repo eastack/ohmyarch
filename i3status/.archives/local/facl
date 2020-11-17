@@ -34,8 +34,8 @@ group::r-x
 other::r-x
 
 # file: /home/radix10/.config/i3status/config
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--

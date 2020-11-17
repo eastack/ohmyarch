@@ -27,29 +27,29 @@ group::r-x
 other::r-x
 
 # file: /home/radix10/.fehbg
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rwx
 group::r-x
 other::r--
 
 # file: /home/radix10/pictures/wallpaper_dark.png
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/pictures/wallpaper_light.png
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/pictures/wallpaper.png
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--
