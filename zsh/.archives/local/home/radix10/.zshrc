@@ -1,9 +1,9 @@
-export ZSH="/home/radix10/.oh-my-zsh"
-export TERM="xterm-256color"
+export ZSH=/home/radix10/.oh-my-zsh
+export TERM=xterm-256color
 export EDITOR=nvim
 export DISABLE_MAGIC_FUNCTIONS=true
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME=robbyrussell
 
 plugins=(git tmux systemd)
 
