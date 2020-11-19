@@ -12,10 +12,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'nvim-lua/completion-nvim'
-Plug 'neovim/nvim-lspconfig'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'freitass/todo.txt-vim'
 call plug#end()
