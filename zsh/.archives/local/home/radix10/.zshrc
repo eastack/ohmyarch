@@ -5,7 +5,7 @@ export DISABLE_MAGIC_FUNCTIONS=true
 
 ZSH_THEME=wezm
 
-plugins=(git tmux systemd)
+plugins=(git tmux systemd ansible)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
