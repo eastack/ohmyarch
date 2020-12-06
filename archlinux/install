@@ -109,8 +109,8 @@ EOF
 arch-chroot /mnt useradd --create-home --shell /bin/zsh --groups wheel $NAME
 
 # Set password
-arch-chroot /mnt echo root:$RPWD | chpasswd
-arch-chroot /mnt echo $NAME:$UPWD | chpasswd
+echo root:$RPWD | arch-chroot /mnt chpasswd
+echo $NAME:$UPWD | arch-chroot /mnt chpasswd
 
 # Enable sudo
 arch-chroot /mnt sed -i 's/^# %wheel ALL=(ALL) ALL$/%wheel ALL=(ALL) ALL/g' /etc/sudoers
