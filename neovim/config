@@ -3,4 +3,4 @@
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://gitee.com/radix10/vim-plug/raw/master/plug.vim'
 
-#nvim --headless -u $HOME/.config/nvim/plug.vim +PlugInstall +qall
+nvim --headless -u $HOME/.config/nvim/plug.vim +PlugInstall +qall
