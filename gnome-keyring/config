@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-# Add PAM Support
-echo 'session    optional     pam_gnome_keyring.so auto_start' | sudo tee /etc/pam.d/login
