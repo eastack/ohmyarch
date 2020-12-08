@@ -121,3 +121,4 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 添加keychain https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
 * [ ] pam gnome keying config?
 * [ ] OM ideavim so powerfull
+* [ ] rank pacman mirror
