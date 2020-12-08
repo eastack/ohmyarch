@@ -1,14 +1,6 @@
-" remap leader key
 let mapleader = " "
 
-" for fcitx.vim
 set ttimeoutlen=100
-
-" enable mouse support
-set mouse=nv
-
-" enable line number
-set nu rnu
 
 vmap <leader>c "+y
 nmap <leader>w :w<CR>
@@ -21,9 +13,10 @@ set background=light
 set termguicolors
 syntax enable
 set cursorline
+set nu rnu
 
 " lightline
-let g:lightline = {'colorscheme': 'gruvbox', 'component': {'filename': '%F'}}
+let g:lightline = {'colorscheme': 'gruvbox'}
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
