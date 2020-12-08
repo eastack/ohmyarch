@@ -1,0 +1,42 @@
+#!/usr/bin/env zsh
+
+echo "idea.system.path=$HOME/.config/idea/system" | tee -a $HOME/.local/share/idea/bin/idea.properties
+echo "idea.config.path=$HOME/.config/idea/config" | tee -a $HOME/.local/share/idea/bin/idea.properties
+echo 'idea.plugins.path=${idea.config.path}/plugins' | tee -a $HOME/.local/share/idea/bin/idea.properties
+
+DOWNLOAD_API='https://data.services.jetbrains.com/products?code=IIU&release.type=release'
+DOWNLOAD_URL=$(curl $DOWNLOAD_API | jq -r '.[0].releases[0].downloads.linux.link')
+
+plug() {
+  trap 'rm -rf "$TEMPDIR"' EXIT
+
+  TEMPDIR=$(mktemp -d)
+  BUILD=$(cat $HOME/.local/share/idea/build.txt)
+
+  curl -sSLfG https://plugins.jetbrains.com/pluginManager \
+    --data-urlencode 'action=download' \
+    --data-urlencode "build=$BUILD" \
+    --data-urlencode "id=$1" \
+    -o $TEMPDIR/plug.zip
+
+  unar $TEMPDIR/plug.zip -o $HOME/.config/idea/config/plugins/
+}
+
+# IdeaVIM
+plug 'IdeaVIM'
+# Lombok
+plug 'Lombook Plugin'
+## AsciiDoc
+plug 'org.asciidoctor.intellij.asciidoc'
+## Free MyBatis plugin
+plug 'cn.wuzhizhan.plugin.mybatis'
+# Translation
+#plug 'cn.yiiguxing.plugin.translate'
+# IdeaVim-EasyMotion depend on AceJump
+plug 'AceJump' && plug 'org.jetbrains.IdeaVim-EasyMotion'
+# Python Support
+plug Pythonid
+# Golang Support
+plug org.jetbrains.plugins.go
+# Kubernetes Support
+plug com.intellij.kubernetes
