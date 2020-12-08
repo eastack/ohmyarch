@@ -41,15 +41,15 @@ group::r-x
 other::r-x
 
 # file: /home/radix10/.config/idea/config/disabled_plugins.txt
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/.ideavimrc
-# owner: radix10
-# group: users
+# owner: 1000
+# group: 985
 user::rw-
 group::r--
 other::r--
