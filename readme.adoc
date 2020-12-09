@@ -115,10 +115,4 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 实现屏幕亮度及色温自动调节
 * [ ] 使用 mustache 模板重写 switheme
 * [ ] 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
-* [ ] 为常用仓库添加从 github 到 gitee 的镜像
 * [ ] asciinema 配置
-* [ ] 当前用户组，因该是有问题 should 1000 not 985？
-* [ ] 添加keychain https://wiki.archlinux.org/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME
-* [ ] pam gnome keying config?
-* [ ] OM ideavim so powerfull
-* [ ] rank pacman mirror
