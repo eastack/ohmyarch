@@ -1,11 +1,12 @@
 #!/usr/bin/env zsh
 
-echo "idea.system.path=$HOME/.config/idea/system" | tee -a $HOME/.local/share/idea/bin/idea.properties
-echo "idea.config.path=$HOME/.config/idea/config" | tee -a $HOME/.local/share/idea/bin/idea.properties
-echo 'idea.plugins.path=${idea.config.path}/plugins' | tee -a $HOME/.local/share/idea/bin/idea.properties
+set -exu
 
-DOWNLOAD_API='https://data.services.jetbrains.com/products?code=IIU&release.type=release'
-DOWNLOAD_URL=$(curl $DOWNLOAD_API | jq -r '.[0].releases[0].downloads.linux.link')
+# config idea.properties
+sed -i 's/# idea.system.path=.*/idea.system.path=${user.home}\/.config\/idea\/system/g' $HOME/.local/share/idea/bin/idea.properties
+sed -i 's/# idea.config.path=.*/idea.config.path=${user.home}\/.config\/idea\/config/g' $HOME/.local/share/idea/bin/idea.properties
+sed -i 's/# idea.plugins.path/idea.plugins.path/g' $HOME/.local/share/idea/bin/idea.properties
+sed -i 's/# idea.log.path/idea.log.path/g' $HOME/.local/share/idea/bin/idea.properties
 
 plug() {
   trap 'rm -rf "$TEMPDIR"' EXIT
@@ -13,7 +14,7 @@ plug() {
   TEMPDIR=$(mktemp -d)
   BUILD=$(cat $HOME/.local/share/idea/build.txt)
 
-  curl -sSLfG https://plugins.jetbrains.com/pluginManager \
+  curl -SLfG https://plugins.jetbrains.com/pluginManager \
     --data-urlencode 'action=download' \
     --data-urlencode "build=$BUILD" \
     --data-urlencode "id=$1" \
@@ -24,19 +25,9 @@ plug() {
 
 # IdeaVIM
 plug 'IdeaVIM'
+
 # Lombok
 plug 'Lombook Plugin'
-## AsciiDoc
-plug 'org.asciidoctor.intellij.asciidoc'
+
 ## Free MyBatis plugin
 plug 'cn.wuzhizhan.plugin.mybatis'
-# Translation
-#plug 'cn.yiiguxing.plugin.translate'
-# IdeaVim-EasyMotion depend on AceJump
-plug 'AceJump' && plug 'org.jetbrains.IdeaVim-EasyMotion'
-# Python Support
-plug Pythonid
-# Golang Support
-plug org.jetbrains.plugins.go
-# Kubernetes Support
-plug com.intellij.kubernetes
