@@ -14,42 +14,42 @@ other::r-x
 
 # file: /home/radix10
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/pictures
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home/radix10/.fehbg
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::r-x
 other::r--
 
 # file: /home/radix10/pictures/wallpaper_dark.png
 # owner: 1000
-# group: 985
+# group: 1000
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/pictures/wallpaper_light.png
 # owner: 1000
-# group: 985
+# group: 1000
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/pictures/wallpaper.png
 # owner: 1000
-# group: 985
+# group: 1000
 user::rw-
 group::r--
 other::r--

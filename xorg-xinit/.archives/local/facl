@@ -14,21 +14,21 @@ other::r-x
 
 # file: /home/radix10
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.keymapping
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home/radix10/.xinitrc
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::r-x
 other::r-x

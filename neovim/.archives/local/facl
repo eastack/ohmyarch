@@ -14,42 +14,42 @@ other::r-x
 
 # file: /home/radix10
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.config
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.config/nvim
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home/radix10/.config/nvim/base.vim
 # owner: 1000
-# group: 985
+# group: 1000
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/.config/nvim/init.vim
 # owner: 1000
-# group: 985
+# group: 1000
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/.config/nvim/plug.vim
 # owner: 1000
-# group: 985
+# group: 1000
 user::rw-
 group::r--
 other::r--

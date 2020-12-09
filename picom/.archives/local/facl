@@ -14,28 +14,28 @@ other::r-x
 
 # file: /home/radix10
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.config
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.config/picom
 # owner: 1000
-# group: 985
+# group: 1000
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home/radix10/.config/picom/picom.conf
 # owner: 1000
-# group: 985
+# group: 1000
 user::rw-
 group::r--
 other::r--
