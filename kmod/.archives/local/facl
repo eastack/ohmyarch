@@ -1,27 +1,27 @@
 # file: /
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc/modprobe.d
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc/modprobe.d/nobeep.conf
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rw-
 group::r--
 other::r--

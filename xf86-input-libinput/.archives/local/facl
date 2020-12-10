@@ -1,34 +1,34 @@
 # file: /
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc/X11
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc/X11/xorg.conf.d
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /etc/X11/xorg.conf.d/30-touchpad.conf
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rw-
 group::r--
 other::r--

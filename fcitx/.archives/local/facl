@@ -1,48 +1,48 @@
 # file: /
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home
-# owner: 0
-# group: 0
+# owner: root
+# group: root
 user::rwx
 group::r-x
 other::r-x
 
 # file: /home/radix10
-# owner: 1000
-# group: 1000
+# owner: radix10
+# group: radix10
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.config
-# owner: 1000
-# group: 1000
+# owner: radix10
+# group: radix10
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.config/fcitx
-# owner: 1000
-# group: 1000
+# owner: radix10
+# group: radix10
 user::rwx
 group::---
 other::---
 
 # file: /home/radix10/.config/fcitx/config
-# owner: 1000
-# group: 1000
+# owner: radix10
+# group: radix10
 user::rw-
 group::r--
 other::r--
 
 # file: /home/radix10/.config/fcitx/profile
-# owner: 1000
-# group: 1000
+# owner: radix10
+# group: radix10
 user::rw-
 group::---
 other::---
