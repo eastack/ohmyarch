@@ -9,8 +9,9 @@ set cursorline
 set nu rnu
 
 vmap <leader>c "+y
-nmap <leader>w :w<CR>
-nmap <leader>q :q<CR>
+nmap <leader>w :write<CR>
+nmap <leader>q :quit<CR>
+nmap <leader>o :GoImports<CR>
 
 " rainbow
 let g:rainbow_active = 1
@@ -34,6 +35,11 @@ map <C-t> :Tagbar<CR>
 " whichkey
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 set timeoutlen=300
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
