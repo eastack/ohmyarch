@@ -1,1 +1,1 @@
-setup $app zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting zsh-lovers
+setup $app zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting zsh-lovers zsh-doc
