@@ -18,4 +18,5 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'luochen1990/rainbow'
 call plug#end()

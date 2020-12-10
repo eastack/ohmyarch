@@ -12,6 +12,9 @@ vmap <leader>c "+y
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 
+" rainbow
+let g:rainbow_active = 1
+
 " fcitx
 set ttimeoutlen=100
 
