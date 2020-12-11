@@ -117,3 +117,4 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
 * [ ] asciinema 配置
 * [ ] 触摸板手势
+* [ ] upload 和 download 目前涉及到权限较小的文件时会有问题，加 sudo ？
