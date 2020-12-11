@@ -37,13 +37,12 @@ nmap <leader>q :q<CR>
 
 " 跳转到实现
 :map gi :action GotoImplementation<CR>
-:map gi :action GotoImplementation<CR>
 
 " 跳转到定义
 :map gd :action GotoDeclaration<CR>
 
 " 重命名
-:map rn :action RenameElement<CR>
+:map <leader>rn :action RenameElement<CR>
 
 " 导航
 :map <C-o> :action Back<CR>
