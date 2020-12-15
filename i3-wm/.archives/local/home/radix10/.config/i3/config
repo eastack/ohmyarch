@@ -2,7 +2,8 @@ font pango:Hack 8.5
 default_border pixel 0
 
 exec --no-startup-id ~/.fehbg
-exec --no-startup-id xss-lock -- i3lock -u -i ~/pictures/wallpaper.png
+exec --no-startup-id xset s 180 120
+exec --no-startup-id xss-lock -n ~/.config/i3/dim-screen.sh -- i3lock -u -i ~/pictures/wallpaper.png
 exec --no-startup-id gost -C ~/.config/gost/config.json
 
 exec_always --no-startup-id fcitx-autostart

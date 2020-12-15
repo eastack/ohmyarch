@@ -40,3 +40,10 @@ user::rw-
 group::r--
 other::r--
 
+# file: /home/radix10/.config/i3/dim-screen.sh
+# owner: radix10
+# group: radix10
+user::rwx
+group::r-x
+other::r-x
+
