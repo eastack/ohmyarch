@@ -21,4 +21,5 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'luochen1990/rainbow'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
 call plug#end()
