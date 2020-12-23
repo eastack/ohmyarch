@@ -7,7 +7,7 @@ setopt extendedglob
 
 readonly ROOT=$(realpath $(dirname $0))
 readonly RDES=${RDES:-$ROOT}
-readonly RSH='ssh -o ControlMaster=auto -o ControlPersist=1M -S ~/.%C'
+readonly RSH="ssh -i $HOME/.ssh/id_rsa -o ControlMaster=auto -o ControlPersist=1M -S $HOME/.%C"
 
 function setup() {
   sudo pacman -S --noconfirm --needed $@
@@ -38,13 +38,13 @@ function clean() {
 
 function upload() {
   for archive ($@) {
-    echo $archive | rsync -rle $RSH --files-from=- . $RDES/$app
+    echo $archive | sudo rsync -rle $RSH --files-from=- . $RDES/$app
   }
 }
 
 function download() {
   for archive ($@) {
-    echo $archive | rsync -rle $RSH --files-from=- $RDES/$app .
+    echo $archive | sudo rsync -rle $RSH --files-from=- $RDES/$app .
   }
 }
 
