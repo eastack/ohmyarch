@@ -13,9 +13,6 @@ nmap <leader>w :write<CR>
 nmap <leader>q :quit<CR>
 nmap <leader>o :GoImports<CR>
 
-" rainbow
-let g:rainbow_active = 1
-
 " fcitx
 set ttimeoutlen=100
 
@@ -28,6 +25,10 @@ let g:lightline = {'colorscheme': 'gruvbox', 'component': {'filename': '%F'}}
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
+
+" devicons
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
 
 " tagbar
 map <C-t> :Tagbar<CR>
