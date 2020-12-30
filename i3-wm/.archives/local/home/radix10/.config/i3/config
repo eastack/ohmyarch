@@ -62,6 +62,8 @@ bindsym $ctrl+7               workspace $ws7
 bindsym $ctrl+8               workspace $ws8
 bindsym $ctrl+9               workspace $ws9
 bindsym $ctrl+0               workspace $ws10
+bindsym $ctrl+minus           move scratchpad
+bindsym $ctrl+plus            scratchpad show
 bindsym $win+$ctrl+$left      move left
 bindsym $win+$ctrl+$down      move down
 bindsym $win+$ctrl+$up        move up
