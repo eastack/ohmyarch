@@ -21,4 +21,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'bryanmylee/vim-colorscheme-icons'
+Plug 'ap/vim-css-color'
+Plug 'Yggdroot/indentLine'
 call plug#end()
