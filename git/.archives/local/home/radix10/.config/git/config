@@ -1,6 +1,7 @@
 [user]
 	name = radix10
 	email = admin@radix10.me
+	signingkey = DAF0A16626D68D4ECFD997E6050BE0B32FFA44E9
 [core]
 	quotepath = false
 	editor = nvim
