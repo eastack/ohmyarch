@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-gpg --import .archives/remote/privkey.asc

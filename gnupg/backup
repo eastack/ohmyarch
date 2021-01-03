@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-gpg --export-secret-keys --armor --output .archives/remote/privkey.asc
