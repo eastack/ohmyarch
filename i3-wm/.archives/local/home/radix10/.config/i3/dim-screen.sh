@@ -6,7 +6,7 @@ trap "light -I; kill %%" EXIT
 light -O
 
 while (( $(light) > 0.5 )); do
-	light -U 0.2
+	light -U 0.1
 	sleep 0.1
 done
 
