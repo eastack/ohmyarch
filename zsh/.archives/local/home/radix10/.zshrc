@@ -20,7 +20,6 @@ bindkey '^f' autosuggest-accept
 alias s='sudo '
 alias r='proxychains -q '
 alias v='nvim'
-alias d='ydcv'
 alias p='pacman'
 alias t='trans'
 alias x='xclip -rmlastnl -selection c'
