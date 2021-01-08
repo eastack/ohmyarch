@@ -98,7 +98,7 @@ client.focused_inactive #fbf1c7 #fbf1c7 #7c6f64
 client.unfocused        #ebdbb2 #ebdbb2 #7c6f64
 
 for_window [floating] move position center
-for_window [floating] fullscreen toggle
+#for_window [floating] fullscreen toggle
 floating_maximum_size 2560 x 1440
 workspace_auto_back_and_forth yes
 
