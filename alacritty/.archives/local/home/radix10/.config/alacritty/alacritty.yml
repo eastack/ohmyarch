@@ -5,11 +5,17 @@ env:
 # Font configuration (JetBrainsMono)
 font:
   normal:
-    family: JetBrains Mono
+    family: JetBrainsMono
+    style: Regular
   bold:
-    family: JetBrains Mono
+    family: JetBrainsMono
+    style: Bold
   italic:
-    family: JetBrains Mono
+    family: JetBrainsMono
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono
+    style: Bold Italic
   size: 10
 
 # Colors (Gruvbox light)
