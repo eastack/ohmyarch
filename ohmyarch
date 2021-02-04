@@ -52,7 +52,7 @@ function ohmyarch() {
   local app
   for app (${@:2}) {
     pushd $ROOT/$app
-    test -f $1 && source $1
+    test -x $1 && source $1
     popd
   }
 }
