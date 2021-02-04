@@ -119,3 +119,5 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 触摸板手势
 * [ ] gpg加密和gnome-keyring
 * [ ] `.xinitrc` 中 `dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY` 需要 `DISPLAY` 吗？
+* [ ] 使用Python备份还原指定的idea配置字段
+* [ ] 真的需要一个 drop down terminal
