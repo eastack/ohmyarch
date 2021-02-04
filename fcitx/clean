@@ -1,1 +1,1 @@
-../.ohmyarch/clean
+clean .archives/*(/)
