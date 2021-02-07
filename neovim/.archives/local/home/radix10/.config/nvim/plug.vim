@@ -22,4 +22,5 @@ Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
