@@ -26,17 +26,12 @@ set $ws8   "8:8"
 set $ws9   "9:9"
 set $ws10  "10:0"
 
-bindsym $win+i                exec --no-startup-id i3-sensible-terminal
-bindsym $win+d                exec --no-startup-id "rofi -show combi"
-
-bindsym $win+r                mode "resize"
 bindsym $win+e                layout toggle split
 bindsym $win+w                layout tabbed
 bindsym $win+s                layout stacking
 bindsym $win+f                fullscreen toggle
 bindsym $win+semicolon        split v
 bindsym $win+apostrophe       split h
-floating_modifier             $win
 
 bindsym $win+space            focus mode_toggle
 bindsym $win+a                focus parent
@@ -52,6 +47,14 @@ bindsym $win+Shift+c          reload
 bindsym $win+Shift+r          restart
 bindsym $win+Shift+e          exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym $win+plus             move scratchpad
+bindsym $win+minus            scratchpad show
+
+bindsym $win+$ctrl+$up        move up
+bindsym $win+$ctrl+$down      move down
+bindsym $win+$ctrl+$left      move left
+bindsym $win+$ctrl+$right     move right
+
 bindsym $ctrl+1               workspace $ws1
 bindsym $ctrl+2               workspace $ws2
 bindsym $ctrl+3               workspace $ws3
@@ -62,12 +65,7 @@ bindsym $ctrl+7               workspace $ws7
 bindsym $ctrl+8               workspace $ws8
 bindsym $ctrl+9               workspace $ws9
 bindsym $ctrl+0               workspace $ws10
-bindsym $win+minus            move scratchpad
-bindsym $win+plus             scratchpad show
-bindsym $win+$ctrl+$left      move left
-bindsym $win+$ctrl+$down      move down
-bindsym $win+$ctrl+$up        move up
-bindsym $win+$ctrl+$right     move right
+
 bindsym $win+$ctrl+1          move container to workspace $ws1
 bindsym $win+$ctrl+2          move container to workspace $ws2
 bindsym $win+$ctrl+3          move container to workspace $ws3
@@ -85,38 +83,40 @@ bindsym XF86AudioMute         exec amixer set Master toggle && amixer set Speake
 bindsym XF86AudioMicMute      exec amixer set Capture toggle
 bindsym XF86MonBrightnessDown exec light -U 0.5
 bindsym XF86MonBrightnessUp   exec light -A 0.5
-bindsym $win+Print            exec maim ~/pictures/$(date +%m%d-%H%M%S).png && echo $_ | xclip -r -selection c && notify-send "Screenshot saved"
-bindsym Print                 exec maim -s ~/pictures/$(date +%m%d-%H%M%S).png && echo $_ | xclip -r -selection c && notify-send "Screenshot saved"
+
+bindsym $win+Print            exec maim ~/pictures/$(date +%m%d-%H%M%S).png && xclip -selection clipboard -t image/png $_ && notify-send "Screenshot saved"
+bindsym Print                 exec --no-startup-id maim -s ~/pictures/test/$(date +%m%d-%H%M%S).png && xclip -selection clipboard -t image/png $_ && notify-send "Screenshot saved"
 bindsym $win+Shift+d          exec switheme dark
 bindsym $win+Shift+l          exec switheme light
 bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
 bindsym $win+o                exec chromium
-bindsym --release $win+p      exec xcolor -s
+bindsym $win+p                exec --no-startup-id xcolor -s
+bindsym $win+i                exec --no-startup-id i3-sensible-terminal
+bindsym $win+d                exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $win+r                mode resize
 
-client.focused          #fbf1c7 #fbf1c7 #3c3836
-client.focused_inactive #fbf1c7 #fbf1c7 #7c6f64
-client.unfocused        #ebdbb2 #ebdbb2 #7c6f64
-
-for_window [floating] move position center
-for_window [floating] fullscreen toggle
-floating_maximum_size 2560 x 1440
+floating_modifier             $win
 workspace_auto_back_and_forth yes
 
-mode "resize" {
-        bindsym $left resize shrink width 10 px or 10 ppt
-        bindsym $down resize grow height 10 px or 10 ppt
-        bindsym $up resize shrink height 10 px or 10 ppt
-        bindsym $right resize grow width 10 px or 10 ppt
-        bindsym Escape mode "default"
+client.focused                #fbf1c7 #fbf1c7 #3c3836
+client.focused_inactive       #fbf1c7 #fbf1c7 #7c6f64
+client.unfocused              #ebdbb2 #ebdbb2 #7c6f64
+
+mode resize {
+  bindsym $up    resize grow   height 10 px or 5 ppt
+  bindsym $down  resize shrink height 10 px or 5 ppt
+  bindsym $left  resize grow   width  10 px or 5 ppt
+  bindsym $right resize shrink width  10 px or 5 ppt
+  bindsym Escape mode   default
 }
 
 bar {
-  status_command i3status
+  status_command          i3status
   strip_workspace_numbers yes
   colors {
-    background #ebdbb2
-    statusline #3c3836
-    separator  #bdae93
+    background         #ebdbb2
+    statusline         #3c3836
+    separator          #bdae93
     focused_workspace  #fbf1c7 #fbf1c7 #3c3836
     active_workspace   #fbf1c7 #fbf1c7 #7c6f64
     inactive_workspace #ebdbb2 #ebdbb2 #7c6f64
