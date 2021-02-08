@@ -3,7 +3,7 @@ let mapleader = " "
 syntax enable
 
 set mouse=nv
-set background=light
+set background=dark
 set termguicolors
 set cursorline
 set nu rnu

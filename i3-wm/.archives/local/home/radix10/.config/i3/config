@@ -98,9 +98,9 @@ bindsym $win+r                mode resize
 floating_modifier             $win
 workspace_auto_back_and_forth yes
 
-client.focused                #fbf1c7 #fbf1c7 #3c3836
-client.focused_inactive       #fbf1c7 #fbf1c7 #7c6f64
-client.unfocused              #ebdbb2 #ebdbb2 #7c6f64
+client.focused                #282828 #282828 #ebdbb2
+client.focused_inactive       #282828 #282828 #a89984
+client.unfocused              #3c3836 #3c3836 #a89984
 
 mode resize {
   bindsym $up    resize grow   height 10 px or 5 ppt
@@ -114,11 +114,11 @@ bar {
   status_command          i3status
   strip_workspace_numbers yes
   colors {
-    background         #ebdbb2
-    statusline         #7c6f64
-    separator          #bdae93
-    focused_workspace  #fbf1c7 #fbf1c7 #3c3836
-    active_workspace   #fbf1c7 #fbf1c7 #7c6f64
-    inactive_workspace #ebdbb2 #ebdbb2 #7c6f64
+    background         #3c3836
+    statusline         #a89984
+    separator          #665c54
+    focused_workspace  #282828 #282828 #ebdbb2
+    active_workspace   #282828 #282828 #a89984
+    inactive_workspace #3c3836 #3c3836 #a89984
   }
 }

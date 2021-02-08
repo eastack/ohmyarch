@@ -1,7 +1,7 @@
 configuration {
   font: "JetBrainsMono 20";
   show-icons: true;
-  theme: "gruvbox-light";
+  theme: "gruvbox-dark";
 }
 element-icon {
     size:             1.0em ;
