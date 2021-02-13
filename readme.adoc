@@ -28,16 +28,37 @@ curl -sSL https://github.com/rwrr/ohmyarch/archive/master.tar.gz | tar -zxv
 ./ohmyarch ACTION [APPNAME]...
 ----
 
+=== 简单示例
+
+比如我们想对 `zsh` 进行管理。
+首先可以创建一个名为 `zsh` 的文件夹用来存储相关脚本。
+[source, bash]
+----
+mkdir zsh
+----
+
+然后在 `zsh` 文件夹下创建一个名为 `setup` 的文件，在其中编写对应脚本。
+[source, bash]
+----
+echo 'echo zsh install cuccess.' > zsh/setup
+----
+
+最后执行下面的命令便可以执行 `zsh/setup` 脚本。
+[source, bash]
+----
+./ohmyarch setup zsh
+----
+
 === 安装 Arch Linux
 
 1. 设置环境变量
 +
 [source, bash]
 ----
-export NAME='radix10'   # 新建用户用户名
-export UPWD='12345'     # 新建用户密码
+export NAME='radix10'   # 用户名
+export UPWD='12345'     # 用户密码
 export RPWD='67890'     # ROOT密码
-export DISK='/dev/sda'  # 系统安装目标磁盘
+export DISK='/dev/sda'  # 系统安装磁盘
 ----
 +
 2. 执行脚本进行系统安装
@@ -51,29 +72,10 @@ NOTE: 脚本将会格式化 `DISK` 环境变量指定磁盘，使用前前请务
 +
 3. 重启进入新系统
 +
-NOTE: 所创建用户其密码为空， `root` 密码被设置为随机值。
-+
 [source, bash]
 ----
 reboot
 ----
-
-=== 安装应用
-
-比如想要管理对 `zsh` 的安装。
-首先确保我们当前处于 `ohmyarch` 目录，然后创建一个 `zsh` 文件夹。
-再将 `.ohmyarch/setup` 链接到 `zsh` 文件夹下
-[source, bash]
-----
-mkdir zsh
-ln -sf .ohmyarch/setup zsh/setup
-----
-最后执行
-[source, bash]
-----
-./ohmyarch setup zsh
-----
-便会执行 `ohmyarch` 中 `setup` 函数进行对 `zsh` 的安装。
 
 === 备份还原
 
@@ -119,5 +121,5 @@ ln -sf .ohmyarch/setup zsh/setup
 * [ ] 触摸板手势
 * [ ] gpg加密和gnome-keyring
 * [ ] `.xinitrc` 中 `dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY` 需要 `DISPLAY` 吗？
-* [ ] 使用Python备份还原指定的idea配置字段
-* [ ] 真的需要一个 drop down terminal
+* [ ] 使用Python备份还原指定的idea配置字段（貌似 xslt + xsltproc 就可以了）
+* [ ] 真的需要一个 drop down terminal（可能scratchpad就够了）
