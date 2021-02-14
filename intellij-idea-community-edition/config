@@ -1,0 +1,16 @@
+base_url='https://confluence.jetbrains.com'
+release_page_url_xpath='string(//*[@id="main-content"]/div[1]/table/tbody/tr/td[1]/ul/li[1]/a/@href)'
+latest_release_download_url_xpath='string(//a[contains(@href,"download_file")]/@href)'
+
+release_page_url=$(curl -s $base_url/display/JBR/Release+notes | \
+	xmllint --html --xpath $release_page_url_xpath - 2>/dev/null)
+
+latest_release_download_url=$(curl -s $base_url$release_page_url | \
+	xmllint --html --xpath $latest_release_download_url_xpath - 2>/dev/null | \
+	grep linux | grep jbr_jcef)
+
+/usr/share/idea/bin/idea.sh format -h 2>&1 >/dev/null
+
+curl -fL $latest_release_download_url | tar -zxvC ~/.config/JetBrains/IdeaIC*/
+
+echo ~/.config/JetBrains/IdeaIC*/jbr > ~/.config/JetBrains/IdeaIC*/idea.jdk
