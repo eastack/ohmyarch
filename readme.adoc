@@ -114,7 +114,6 @@ reboot
 
 == 待办
 
-* [ ] 实现屏幕亮度及色温自动调节
 * [ ] 使用 mustache 模板重写 switheme
 * [ ] 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
 * [ ] asciinema 配置
