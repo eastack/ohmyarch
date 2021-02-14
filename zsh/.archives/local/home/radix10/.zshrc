@@ -5,7 +5,7 @@ export DISABLE_MAGIC_FUNCTIONS=true
 
 ZSH_THEME=wezm
 
-plugins=(git tmux systemd)
+plugins=(git tmux systemd archlinux)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -20,7 +20,6 @@ bindkey '^f' autosuggest-accept
 alias s='sudo '
 alias r='proxychains -q '
 alias v='nvim'
-alias p='pacman'
 alias t='trans'
 alias x='xclip -rmlastnl -selection c'
 
