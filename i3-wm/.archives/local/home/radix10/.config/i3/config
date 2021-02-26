@@ -1,15 +1,3 @@
-font pango:Hack 8.5
-default_border pixel 0
-
-exec --no-startup-id ~/.fehbg
-exec --no-startup-id xset s 180 120
-exec --no-startup-id xss-lock -n ~/.config/i3/dim-screen.sh -- i3lock -u -i ~/pictures/wallpaper.png
-exec --no-startup-id gost -C ~/.config/gost/config.json
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-
-exec_always --no-startup-id fcitx-autostart
-exec_always --no-startup-id sleep 3 && ~/.keymapping
-
 set $win   Mod4
 set $ctrl  Control
 set $left  h
@@ -26,6 +14,21 @@ set $ws7   "7:7"
 set $ws8   "8:8"
 set $ws9   "9:9"
 set $ws10  "10:0"
+
+font                          pango:Hack 8.5
+default_border                pixel 0
+floating_modifier             $win
+workspace_auto_back_and_forth yes
+for_window                    [floating] fullscreen toggle
+
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id xset s 180 120
+exec --no-startup-id xss-lock -n ~/.config/i3/dim-screen.sh -- i3lock -u -i ~/pictures/wallpaper.png
+exec --no-startup-id gost -C ~/.config/gost/config.json
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+
+exec_always --no-startup-id fcitx-autostart
+exec_always --no-startup-id sleep 3 && ~/.keymapping
 
 bindsym $win+e                layout toggle split
 bindsym $win+w                layout tabbed
@@ -46,7 +49,7 @@ bindsym $win+Shift+q          kill
 bindsym $win+Shift+f          floating toggle
 bindsym $win+Shift+c          reload
 bindsym $win+Shift+r          restart
-bindsym $win+Shift+e          exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $win+Shift+e          exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $win+plus             move scratchpad
 bindsym $win+minus            scratchpad show
@@ -96,9 +99,6 @@ bindsym $win+i                exec --no-startup-id i3-sensible-terminal
 bindsym $win+d                exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
 bindsym $win+r                mode resize
 
-floating_modifier             $win
-workspace_auto_back_and_forth yes
-
 client.focused                #282828 #282828 #ebdbb2
 client.focused_inactive       #282828 #282828 #a89984
 client.unfocused              #3c3836 #3c3836 #a89984
@@ -116,7 +116,7 @@ bar {
   strip_workspace_numbers yes
   colors {
     background         #3c3836
-    statusline         #a89984
+    statusline         #ebdbb2
     separator          #665c54
     focused_workspace  #282828 #282828 #ebdbb2
     active_workspace   #282828 #282828 #a89984
