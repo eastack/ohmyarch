@@ -1,0 +1,42 @@
+# file: /
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10
+# owner: radix10
+# group: radix10
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.config
+# owner: radix10
+# group: radix10
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.config/gtk-3.0
+# owner: radix10
+# group: radix10
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.config/gtk-3.0/settings.ini
+# owner: radix10
+# group: radix10
+user::rw-
+group::r--
+other::r--
+
