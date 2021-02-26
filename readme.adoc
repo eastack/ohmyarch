@@ -122,3 +122,5 @@ reboot
 * [ ] `.xinitrc` 中 `dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY` 需要 `DISPLAY` 吗？
 * [ ] 使用Python备份还原指定的idea配置字段（貌似 xslt + xsltproc 就可以了）
 * [ ] 真的需要一个 drop down terminal（可能scratchpad就够了）
+* [ ] 确定keymapping
+* [ ] 添加swap文件or分区？
