@@ -13,9 +13,9 @@ parted -s -a optimal $DISK \
        unit mib \
        mkpart primary 1 129 \
        name 1 boot \
-       mkpart primary 129 16513
+       mkpart primary 129 16513 \
        name 2 swap \
-       mkpart primary 16513 -1 \
+       mkpart primary 16513 100% \
        name 3 rootfs \
        set 1 boot on 
 
@@ -29,19 +29,16 @@ mkfs.ext4 -F $DISK*3
 
 # Mount the file systems
 # activate swap partition
-swapon $DISK*3
+swapon $DISK*2
 # mount root partition
-mount $DISK*2 /mnt
+mount $DISK*3 /mnt
 # create boot directory
 mkdir /mnt/boot
 # mount boot partition
 mount $DISK*1 /mnt/boot
 
 # Set mirrors
-curl -sSL 'https://www.archlinux.org/mirrorlist/?country=CN&protocol=https' \
-	| sed 's/^#Server/Server/g' \
-	| rankmirrors - \
-	> /etc/pacman.d/mirrorlist
+reflector --country China --protocol https --fastest 3 > /etc/pacman.d/mirrorlist
 
 # Install essential packages
 pacstrap /mnt base linux linux-firmware intel-ucode iwd crda sudo zsh vi rsync man-db
