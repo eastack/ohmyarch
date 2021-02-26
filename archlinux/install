@@ -13,17 +13,23 @@ parted -s -a optimal $DISK \
        unit mib \
        mkpart primary 1 129 \
        name 1 boot \
-       mkpart primary 129 100% \
-       name 2 rootfs \
+       mkpart primary 129 16513
+       name 2 swap \
+       mkpart primary 16513 -1 \
+       name 3 rootfs \
        set 1 boot on 
 
 # Format the partitions
 # format boot partition
 mkfs.fat -F 32 $DISK*1
+# format swap partition
+mkswap $DISK*2
 # format root partition
-mkfs.ext4 -F $DISK*2
+mkfs.ext4 -F $DISK*3
 
 # Mount the file systems
+# activate swap partition
+swapon $DISK*3
 # mount root partition
 mount $DISK*2 /mnt
 # create boot directory
@@ -99,7 +105,7 @@ title      Arch Linux
 linux      /vmlinuz-linux
 initrd     /intel-ucode.img
 initrd     /initramfs-linux.img
-options    root=$(ls $DISK*2) rw
+options    root=$(ls $DISK*3) rw
 EOF
 cat <<EOF > /mnt/boot/loader/loader.conf
 default arch
