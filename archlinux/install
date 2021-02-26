@@ -38,7 +38,7 @@ mkdir /mnt/boot
 mount $DISK*1 /mnt/boot
 
 # Set mirrors
-reflector --country China --protocol https --fastest 3 > /etc/pacman.d/mirrorlist
+reflector --country China --protocol https --fastest 3 --save /etc/pacman.d/mirrorlist
 
 # Install essential packages
 pacstrap /mnt base linux linux-firmware intel-ucode iwd crda sudo zsh vi rsync man-db
