@@ -16,7 +16,7 @@
 
 [source, bash]
 ----
-curl -sSL https://github.com/rwrr/ohmyarch/archive/master.tar.gz | tar -zxv
+curl -sSL https://ghproxy.com/https://github.com/eastack/ohmyarch/archive/master.tar.gz | tar -zxv
 ----
 
 == 使用
@@ -114,13 +114,11 @@ reboot
 
 == 待办
 
-* [ ] 使用 mustache 模板重写 switheme
 * [ ] 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
 * [ ] asciinema 配置
 * [ ] 触摸板手势
-* [ ] gpg加密和gnome-keyring
 * [ ] `.xinitrc` 中 `dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY` 需要 `DISPLAY` 吗？
 * [ ] 使用Python备份还原指定的idea配置字段（貌似 xslt + xsltproc 就可以了）
-* [ ] 真的需要一个 drop down terminal（可能scratchpad就够了）
 * [ ] 确定keymapping
-* [ ] 添加swap文件or分区？
+* [ ] ssh yubikey 啥的尽快弄好, key agent, 和备份
+* [ ] gpg加密和gnome-keyring
