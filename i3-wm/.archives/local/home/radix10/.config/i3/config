@@ -21,7 +21,7 @@ font                          pango:Hack 8.5
 default_border                pixel 0
 floating_modifier             $win
 workspace_auto_back_and_forth yes
-for_window                    [floating] fullscreen toggle
+floating_maximum_size 2048 x 1152
 
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id xset s 180 120
