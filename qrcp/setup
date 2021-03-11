@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-sudo curl -sSLf https://cdn.radix10.cn/$app -o /usr/local/bin/$app
-sudo chmod +x $_
