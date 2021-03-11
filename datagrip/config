@@ -1,0 +1,33 @@
+#!/usr/bin/env zsh
+
+set -exu
+
+# config idea.properties
+sed -i 's/# idea.system.path=.*/idea.system.path=${user.home}\/.config\/idea\/system/g' $HOME/.local/share/idea/bin/idea.properties
+sed -i 's/# idea.config.path=.*/idea.config.path=${user.home}\/.config\/idea\/config/g' $HOME/.local/share/idea/bin/idea.properties
+sed -i 's/# idea.plugins.path/idea.plugins.path/g' $HOME/.local/share/idea/bin/idea.properties
+sed -i 's/# idea.log.path/idea.log.path/g' $HOME/.local/share/idea/bin/idea.properties
+
+plug() {
+  trap 'rm -rf "$TEMPDIR"' EXIT
+
+  TEMPDIR=$(mktemp -d)
+  BUILD=$(cat $HOME/.local/share/idea/build.txt)
+
+  curl -SLfG https://plugins.jetbrains.com/pluginManager \
+    --data-urlencode 'action=download' \
+    --data-urlencode "build=$BUILD" \
+    --data-urlencode "id=$1" \
+    -o $TEMPDIR/plug.zip
+
+  unar $TEMPDIR/plug.zip -o $HOME/.config/idea/config/plugins/
+}
+
+# IdeaVIM
+plug 'IdeaVIM'
+
+# Lombok
+plug 'Lombook Plugin'
+
+## Free MyBatis plugin
+plug 'cn.wuzhizhan.plugin.mybatis'
