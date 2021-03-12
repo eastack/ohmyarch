@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# Kill all xcape
+killall -q xcape
+# Restore keymap
+setxkbmap -option
+
+## Alt_L to Shift_R | Insert
+#xmodmap -e "remove Mod1 = Alt_L"
+#xmodmap -e "keysym Alt_L = Shift_R"
+#xmodmap -e "add Shift = Shift_R"
+#xmodmap -e "keycode any = Insert"
+#xcape -e "Shift_R=Insert"
+
+# Space to Control_R | Space
+xmodmap -e "keysym space = Control_R"
+xmodmap -e "add Control = Control_R"
+xmodmap -e "keycode any = space"
+xcape -e "Control_R=space"
+
+# Alt_R to Super_R | Escape
+xmodmap -e "remove Mod1 = Alt_R"
+xmodmap -e "keysym Alt_R = Super_R"
+xmodmap -e "add Mod4 = Super_R"
+xmodmap -e "keycode any = Escape"
+xcape -e "Super_R=Escape"
+
+## Print to Alt_R
+#xmodmap -e "keysym Print = Alt_R"
+#xmodmap -e "add Mod1 = Alt_R"
+
+# Super_L to Print
+#xmodmap -e "keycode 133 = Print NoSymbol Print"
+#xmodmap -e "remove Mod4 = Super_L"
+
+# Lock to Mode_switch
+xmodmap -e "keycode 66 = Mode_switch NoSymbol Mode_switch"
+xmodmap -e "clear Lock"
+
+# Control_L to Shift_L
+#xmodmap -e "keycode 37 = Shift_L NoSymbol Shift_L"

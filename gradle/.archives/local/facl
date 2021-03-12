@@ -12,23 +12,23 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10
-# owner: radix10
-# group: radix10
+# file: /home/eastack
+# owner: eastack
+# group: eastack
 user::rwx
 group::---
 other::---
 
-# file: /home/radix10/.gradle
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.gradle
+# owner: eastack
+# group: eastack
 user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10/.gradle/init.gradle
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.gradle/init.gradle
+# owner: eastack
+# group: eastack
 user::rw-
 group::r--
 other::r--

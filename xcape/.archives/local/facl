@@ -19,24 +19,10 @@ user::rwx
 group::---
 other::---
 
-# file: /home/eastack/.config
-# owner: eastack
-# group: eastack
-user::rwx
-group::---
-other::---
-
-# file: /home/eastack/.config/i3status
+# file: /home/eastack/.keymapping
 # owner: eastack
 # group: eastack
 user::rwx
 group::r-x
 other::r-x
-
-# file: /home/eastack/.config/i3status/config
-# owner: eastack
-# group: eastack
-user::rw-
-group::r--
-other::r--
 

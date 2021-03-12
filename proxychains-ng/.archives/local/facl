@@ -12,23 +12,23 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10
-# owner: radix10
-# group: radix10
+# file: /home/eastack
+# owner: eastack
+# group: eastack
 user::rwx
 group::---
 other::---
 
-# file: /home/radix10/.proxychains
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.proxychains
+# owner: eastack
+# group: eastack
 user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10/.proxychains/proxychains.conf
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.proxychains/proxychains.conf
+# owner: eastack
+# group: eastack
 user::rw-
 group::r--
 other::r--

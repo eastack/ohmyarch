@@ -12,30 +12,30 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10
-# owner: radix10
-# group: radix10
+# file: /home/eastack
+# owner: eastack
+# group: eastack
 user::rwx
 group::---
 other::---
 
-# file: /home/radix10/.config
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.config
+# owner: eastack
+# group: eastack
 user::rwx
 group::---
 other::---
 
-# file: /home/radix10/.config/dunst
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.config/dunst
+# owner: eastack
+# group: eastack
 user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10/.config/dunst/dunstrc
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.config/dunst/dunstrc
+# owner: eastack
+# group: eastack
 user::rw-
 group::r--
 other::r--

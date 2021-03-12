@@ -12,29 +12,29 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10
-# owner: radix10
+# file: /home/eastack
+# owner: eastack
 # group: users
 user::rwx
 group::---
 other::---
 
-# file: /home/radix10/.config
-# owner: radix10
+# file: /home/eastack/.config
+# owner: eastack
 # group: users
 user::rwx
 group::---
 other::---
 
-# file: /home/radix10/.config/user-dirs.dirs
-# owner: radix10
+# file: /home/eastack/.config/user-dirs.dirs
+# owner: eastack
 # group: users
 user::rw-
 group::---
 other::---
 
-# file: /home/radix10/.config/user-dirs.locale
-# owner: radix10
+# file: /home/eastack/.config/user-dirs.locale
+# owner: eastack
 # group: users
 user::rw-
 group::r--

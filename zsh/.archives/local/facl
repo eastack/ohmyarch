@@ -12,23 +12,23 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/radix10
-# owner: radix10
-# group: radix10
+# file: /home/eastack
+# owner: eastack
+# group: eastack
 user::rwx
 group::---
 other::---
 
-# file: /home/radix10/.zprofile
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.zprofile
+# owner: eastack
+# group: eastack
 user::rw-
 group::r--
 other::r--
 
-# file: /home/radix10/.zshrc
-# owner: radix10
-# group: radix10
+# file: /home/eastack/.zshrc
+# owner: eastack
+# group: eastack
 user::rw-
 group::r--
 other::r--
