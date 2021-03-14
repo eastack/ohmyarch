@@ -119,7 +119,6 @@ reboot
 * [ ] 触摸板手势
 * [ ] `.xinitrc` 中 `dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY` 需要 `DISPLAY` 吗？
 * [ ] 使用Python备份还原指定的idea配置字段（貌似 xslt + xsltproc 就可以了）
-* [ ] 确定keymapping 原始配置还在 xinit 下有备份
 * [ ] ssh yubikey 啥的尽快弄好, key agent, 和备份
 * [ ] gpg加密和gnome-keyring
 * [ ] redshift 开机启动前需要启动定位服务
