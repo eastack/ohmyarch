@@ -61,16 +61,16 @@ bindsym $win+$ctrl+$down      move down
 bindsym $win+$ctrl+$left      move left
 bindsym $win+$ctrl+$right     move right
 
-bindsym $ctrl+1               workspace $ws1
-bindsym $ctrl+2               workspace $ws2
-bindsym $ctrl+3               workspace $ws3
-bindsym $ctrl+4               workspace $ws4
-bindsym $ctrl+5               workspace $ws5
-bindsym $ctrl+6               workspace $ws6
-bindsym $ctrl+7               workspace $ws7
-bindsym $ctrl+8               workspace $ws8
-bindsym $ctrl+9               workspace $ws9
-bindsym $ctrl+0               workspace $ws10
+bindsym $win+1               workspace $ws1
+bindsym $win+2               workspace $ws2
+bindsym $win+3               workspace $ws3
+bindsym $win+4               workspace $ws4
+bindsym $win+5               workspace $ws5
+bindsym $win+6               workspace $ws6
+bindsym $win+7               workspace $ws7
+bindsym $win+8               workspace $ws8
+bindsym $win+9               workspace $ws9
+bindsym $win+0               workspace $ws10
 
 bindsym $win+$ctrl+1          move container to workspace $ws1
 bindsym $win+$ctrl+2          move container to workspace $ws2
