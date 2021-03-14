@@ -123,3 +123,11 @@ reboot
 * [ ] gpg加密和gnome-keyring
 * [ ] redshift 开机启动前需要启动定位服务
 * [ ] tinc开机启动失败问题待排查
+
+== 片段
+
+[source, bash]
+----
+sed -i "s/radix10/eastack/" $(ls ./*/.archives/*/facl)
+ls -d ./*/.archives/*/home/radix10 | xargs -I file sh -c 'sudo mv file $(dirname file)/eastack'
+----
