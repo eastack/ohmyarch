@@ -1,9 +1,7 @@
 = Oh My Arch
 
 一个用Shell编写的Arch Linux配置管理工具。
-
-用来管理系统配置文件及命令，支持文件备份还原（本地/远程）。
-配合Git可实现配置文件的版本控制。
+配合Git实现版本控制。
 
 == 依赖
 
@@ -38,9 +36,10 @@ mkdir zsh
 ----
 
 然后在 `zsh` 文件夹下创建一个名为 `setup` 的文件，在其中编写对应脚本。
+.zsh/setup
 [source, bash]
 ----
-echo 'echo zsh install cuccess.' > zsh/setup
+echo zsh install cuccess.
 ----
 
 最后执行下面的命令便可以执行 `zsh/setup` 脚本。
@@ -83,12 +82,12 @@ reboot
 
 1. 配置
 +
-然后将要进行管理文件的绝对路径添加到 `./zsh/.archives/local/file` 文件中
+然后将要进行管理文件的绝对路径添加到 `./zsh/.archives/main/file` 文件中
 +
 2. 备份
 +
-文件将保持其路径备份到 `./zsh/.archives/local` 目录下。
-而其相关权限也被保存于 `./zsh/.archives/local/facl` 文件中。
+文件将保持其路径备份到 `./zsh/.archives/main` 目录下。
+而其相关权限也被保存于 `./zsh/.archives/main/facl` 文件中。
 +
 [source, bash]
 ----
