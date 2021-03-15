@@ -1,4 +1,11 @@
 #!/usr/bin/env zsh
 
-sudo curl -sSLf https://cdn.radix10.cn/$app -o /usr/local/bin/$app
-sudo chmod +x $_
+function main() {
+  cd $(mktemp -d)
+  trap 'trash "$PWD"' EXIT
+
+  curl -sSLf https://cdn.radix10.cn/sedutil.pkg.tar.zst -O
+  sudo pacman -U --noconfirm --needed sedutil.pkg.tar.zst
+}
+
+main

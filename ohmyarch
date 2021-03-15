@@ -6,8 +6,6 @@ setopt pipefail
 setopt extendedglob
 
 readonly ROOT=$(realpath $(dirname $0))
-readonly RDES=${RDES:-$ROOT}
-readonly RSH="ssh -i $HOME/.ssh/id_rsa -o ControlMaster=auto -o ControlPersist=1M -S $HOME/.%C"
 
 function setup() {
   sudo pacman -S --noconfirm --needed $@
@@ -17,9 +15,9 @@ function backup() {
   for archive ($@) {
     for filepath ($(envsubst < $archive/file)) {
       until [[ $filepath == / ]] echo ${filepath::=$filepath:h}
-    } | sort | uniq | sudo getfacl -p - > $archive/facl
-    envsubst < $archive/file | sort | sudo getfacl -pR - >> $archive/facl
-    envsubst < $archive/file | sudo rsync -a --files-from=- / $archive
+    } | sort | uniq | getfacl -p - > $archive/facl
+    envsubst < $archive/file | sort | getfacl -pR - >> $archive/facl
+    envsubst < $archive/file | rsync -a --files-from=- / $archive
   }
 }
 
@@ -32,19 +30,7 @@ function restore() {
 
 function clean() {
   for archive ($@) {
-    sudo rm -rf $archive/^file
-  }
-}
-
-function upload() {
-  for archive ($@) {
-    echo $archive | sudo rsync -rle $RSH --files-from=- . $RDES/$app
-  }
-}
-
-function download() {
-  for archive ($@) {
-    echo $archive | sudo rsync -rle $RSH --files-from=- $RDES/$app .
+    rm -rf $archive/^file
   }
 }
 
