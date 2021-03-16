@@ -122,7 +122,9 @@ reboot
 * [ ] gpg加密和gnome-keyring
 * [ ] redshift 开机启动前需要启动定位服务
 * [ ] tinc开机启动失败问题待排查
-* [ ] datagrip文件检查
+* [ ] datagrip setup 逻辑有问题，config文件丢失
+* [ ] sedutil no service unit
+* [ ] zsh $ZSH not set
 
 == 片段
 
