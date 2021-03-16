@@ -2,7 +2,7 @@
 
 function main() {
   cd $(mktemp -d)
-  trap 'trash "$PWD"' EXIT
+  trap 'rm -rf "$PWD"' EXIT
 
   curl -sSLf https://cdn.radix10.cn/sedutil.pkg.tar.zst -O
   sudo pacman -U --noconfirm --needed sedutil.pkg.tar.zst
