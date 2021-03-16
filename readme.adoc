@@ -14,7 +14,7 @@
 
 [source, bash]
 ----
-curl -sSL https://ghproxy.com/https://github.com/eastack/ohmyarch/archive/master.tar.gz | tar -zxv
+curl -sSL https://ghproxy.com/https://github.com/eastack/ohmyarch/archive/main.tar.gz | tar -zxv
 ----
 
 == 使用
