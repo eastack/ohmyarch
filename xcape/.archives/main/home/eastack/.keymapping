@@ -8,7 +8,7 @@ setxkbmap -option
 # CapsLock to Control
 xmodmap -e "clear Lock"
 xmodmap -e "clear Control"
-xmodmap -e "keycode 66 = Control_L"
+xmodmap -e "keycode 66 = Control_R"
 xmodmap -e "add control = Control_L Control_R"
 
 # Space to Super_R | Space
