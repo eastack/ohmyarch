@@ -1,7 +1,6 @@
 = Oh My Arch
 
 一个用 Shell 编写的 Arch Linux 配置管理工具。
-配合 Git 实现版本控制。
 
 == 依赖
 
@@ -28,7 +27,7 @@ curl -sSL https://ghproxy.com/https://github.com/eastack/ohmyarch/archive/main.t
 
 === 简单示例
 
-比如我们想对 `zsh` 进行管理。
+比如我们想管理 `zsh` 的安装。
 首先可以创建一个名为 `zsh` 的文件夹用来存储相关脚本。
 [source, bash]
 ----
@@ -39,8 +38,12 @@ mkdir zsh
 .zsh/setup
 [source, bash]
 ----
-echo zsh install cuccess.
+echo zsh installing... # <1>
+setup zsh # <2>
+echo zsh installed.
 ----
+<1> 本质上是 `shell` 脚本，可以书写任意有效 `shell` 语句
+<2> `setup` 是 `ohmyarch` 提供的函数，通过 `pacman` 安装指定应用
 
 最后执行下面的命令便可以执行 `zsh/setup` 脚本。
 [source, bash]
