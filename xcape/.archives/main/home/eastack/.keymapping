@@ -5,17 +5,15 @@ killall -q xcape
 # Restore keymap
 setxkbmap -option
 
-# CapsLock to Control
-xmodmap -e "clear Lock"
-xmodmap -e "clear Control"
-xmodmap -e "keycode 66 = Control_R"
-xmodmap -e "add control = Control_L Control_R"
-
-# Space to Super_R | Space
-xmodmap -e "keysym space = Super_R"
-xmodmap -e "add Mod4 = Super_R"
+# Space plus Control_R
+xmodmap -e "keysym space = Control_R"
+xmodmap -e "add Control = Control_R"
 xmodmap -e "keycode any = space"
-xcape -e "Super_R=space"
+xcape -e "Control_R=space"
+
+# CapsLock to Super_R
+xmodmap -e "clear Lock"
+xmodmap -e "keysym Caps_Lock = Super_R"
 
 # Alt_R plus Escape
 xmodmap -e "keycode any = Escape"
