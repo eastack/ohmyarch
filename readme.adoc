@@ -124,6 +124,7 @@ reboot
 * [ ] ssh yubikey 啥的尽快弄好, key agent, 和备份
 * [ ] gpg加密和gnome-keyring
 * [ ] redshift 开机启动前需要启动定位服务
+* [ ] 私密数据分库存储，使用git-crypt进行加密
 
 == 片段
 
