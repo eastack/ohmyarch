@@ -17,7 +17,7 @@ function backup() {
       until [[ $filepath == / ]] echo ${filepath::=$filepath:h}
     } | sort | uniq | getfacl -p - > $archive/facl
     envsubst < $archive/file | sort | getfacl -pR - >> $archive/facl
-    envsubst < $archive/file | rsync -a --files-from=- / $archive
+    envsubst < $archive/file | rsync -ar --files-from=- / $archive
   }
 }
 
