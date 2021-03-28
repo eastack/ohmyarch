@@ -33,3 +33,24 @@ user::rw-
 group::r--
 other::r--
 
+# file: /home/eastack/.gnupg/gpg.conf
+# owner: eastack
+# group: eastack
+user::rw-
+group::---
+other::---
+
+# file: /home/eastack/.gnupg/pubring.kbx
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.gnupg/trustdb.gpg
+# owner: eastack
+# group: eastack
+user::rw-
+group::---
+other::---
+
