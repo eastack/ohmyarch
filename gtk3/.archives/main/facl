@@ -30,8 +30,8 @@ other::---
 # owner: eastack
 # group: eastack
 user::rwx
-group::---
-other::---
+group::r-x
+other::r-x
 
 # file: /home/eastack/.config/gtk-3.0/settings.ini
 # owner: eastack
