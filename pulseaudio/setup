@@ -1,1 +1,3 @@
-setup $app pulseaudio-alsa pulseaudio-bluetooth
+setup $app \
+  pulseaudio-alsa \
+  pulseaudio-bluetooth

@@ -1,1 +1,3 @@
-setup $app tesseract-data-eng tesseract-data-chi_sim
+setup $app \
+  tesseract-data-chi_sim \
+  tesseract-data-eng

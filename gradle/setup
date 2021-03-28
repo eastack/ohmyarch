@@ -1,1 +1,3 @@
-setup $app gradle-src gradle-doc
+setup $app \
+  gradle-doc \
+  gradle-src
