@@ -2,6 +2,9 @@ export ZSH=$HOME/.oh-my-zsh
 export TERM=xterm-256color
 export EDITOR=nvim
 export DISABLE_MAGIC_FUNCTIONS=true
+export GPG_TTY=$(tty)
+
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 ZSH_THEME=wezm
 
