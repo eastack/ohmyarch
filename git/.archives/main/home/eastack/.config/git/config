@@ -1,6 +1,7 @@
 [user]
 	name = eastack
 	email = admin@eastack.me
+	signingkey = 0x823DD7632963660B
 [core]
 	quotepath = false
 	editor = nvim
