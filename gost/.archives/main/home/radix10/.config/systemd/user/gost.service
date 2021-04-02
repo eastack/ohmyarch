@@ -1,0 +1,13 @@
+[Unit]
+Description=GO Simple Tunnel
+Documentation=https://www.v2fly.org/
+After=network.target nss-lookup.target
+
+[Service]
+NoNewPrivileges=true
+ExecStart=/usr/bin/gost -C %h/.config/gost/config.json
+Restart=on-failure
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=default.target

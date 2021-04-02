@@ -26,8 +26,6 @@ floating_maximum_size 2048 x 1152
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id xset s 180 120
 exec --no-startup-id xss-lock -n ~/.config/i3/dim-screen.sh -- i3lock -u -i ~/pictures/wallpaper.png
-exec --no-startup-id gost -C ~/.config/gost/config.json
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 exec_always --no-startup-id fcitx-autostart
 exec_always --no-startup-id sleep 3 && ~/.keymapping
