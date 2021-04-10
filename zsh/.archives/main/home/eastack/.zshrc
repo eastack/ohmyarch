@@ -1,4 +1,3 @@
-export ZSH=$HOME/.oh-my-zsh
 export TERM=xterm-256color
 export EDITOR=nvim
 export DISABLE_MAGIC_FUNCTIONS=true
@@ -6,9 +5,7 @@ export GPG_TTY=$(tty)
 
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-ZSH_THEME=wezm
-
-plugins=(git tmux systemd archlinux)
+plugins=(git tmux systemd)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -40,3 +37,5 @@ reconnect-touchpad() {
   echo -n "none" | sudo tee /sys/bus/serio/devices/serio1/drvctl
   echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 }
+
+eval "$(starship init zsh)"
