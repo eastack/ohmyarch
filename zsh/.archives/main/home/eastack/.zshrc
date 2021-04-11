@@ -24,6 +24,12 @@ alias x='xclip -rmlastnl -selection c'
 alias l='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias cp='cp -r'
+alias gt='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gd='git diff'
+alias gp='git push'
+alias gl='git pull'
 
 wifi-switch() {
   iwctl station wlan0 scan
