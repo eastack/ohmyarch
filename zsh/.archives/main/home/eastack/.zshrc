@@ -1,16 +1,15 @@
+autoload -Uz compinit && compinit
+
+export HISTFILE=~/.histfile
+export HISTSIZE=1000
+export SAVEHIST=1000
 export TERM=xterm-256color
 export EDITOR=nvim
-export DISABLE_MAGIC_FUNCTIONS=true
 export GPG_TTY=$(tty)
 
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
-plugins=(git tmux systemd)
-
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey -v
 bindkey -M vicmd 'k' history-substring-search-up
@@ -22,8 +21,9 @@ alias r='proxychains -q '
 alias v='nvim'
 alias t='trans'
 alias x='xclip -rmlastnl -selection c'
-
-unsetopt sharehistory
+alias l='ls --color=auto'
+alias ll='ls -l --color=auto'
+alias cp='cp -r'
 
 wifi-switch() {
   iwctl station wlan0 scan
@@ -37,5 +37,7 @@ reconnect-touchpad() {
   echo -n "none" | sudo tee /sys/bus/serio/devices/serio1/drvctl
   echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 }
+
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 eval "$(starship init zsh)"
