@@ -96,7 +96,7 @@ neovim_color_switch() {
 	  return 1
   else
     sed -i "s/set background=.*/set background=$1/g" ~/.config/nvim/base.vim
-    python /usr/local/bin/switheme_neovim.py $1
+    python ~/.local/bin/switheme_neovim.py $1
   fi
 }
 
@@ -125,7 +125,7 @@ rofi_color_switch() {
     mode='gruvbox-dark'
   fi
 
-  now_background=`cat config.rasi| grep -v '\/\*' | grep theme:`
+  now_background=`cat ~/.config/rofi/config.rasi| grep -v '\/\*' | grep theme:`
   if [[ $now_background =~ 'dark' && $mode = 'dark' ]]; then
     return 1
   elif [[ $now_background =~ 'light' && $mode = 'light' ]]; then
