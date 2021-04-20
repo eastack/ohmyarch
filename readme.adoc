@@ -116,12 +116,11 @@ reboot
 
 == 待办
 
-* [ ] 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
-* [ ] asciinema 配置
-* [ ] 触摸板手势
-* [ ] 使用Python备份还原指定的idea配置字段（貌似 xslt + xsltproc 就可以了）
-* [ ] 私密数据分库存储，使用git-crypt进行加密
-* [ ] autostart app to systemd
+* 蓝牙键盘连接时自动执行 `~/.keymapping` https://wiki.archlinux.org/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)[Udev]
+* 触摸板手势
+* 使用Python备份还原指定的idea配置字段（貌似 xslt + xsltproc 就可以了）
+* 私密数据分库存储，使用git-crypt进行加密
+* autostart app to systemd
 
 == 片段
 
