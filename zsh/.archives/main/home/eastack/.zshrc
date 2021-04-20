@@ -1,4 +1,6 @@
 autoload -Uz compinit && compinit
+setopt autocd
+zstyle ':completion:*' menu select
 
 export HISTFILE=~/.histfile
 export HISTSIZE=1000
@@ -16,20 +18,24 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^f' autosuggest-accept
 
-alias s='sudo '
-alias r='proxychains -q '
-alias v='nvim'
-alias t='trans'
-alias x='xclip -rmlastnl -selection c'
+alias .....='../../../../'
+alias ....='../../../'
+alias ...='../../'
+alias ..='../'
+alias cp='cp -r'
 alias l='ls --color=auto'
 alias ll='ls -l --color=auto'
-alias cp='cp -r'
-alias gt='git status'
-alias gc='git commit'
-alias ga='git add'
-alias gd='git diff'
-alias gp='git push'
-alias gl='git pull'
+alias r='proxychains -q '
+alias s='sudo '
+alias sc-restart='sudo systemctl restart'
+alias sc-start='sudo systemctl start'
+alias sc-status='sudo systemctl status'
+alias scu-restart='sudo systemctl --user restart'
+alias scu-start='sudo systemctl --user start'
+alias scu-status='sudo systemctl --user status'
+alias t='trans'
+alias v='nvim'
+alias x='xclip -rmlastnl -selection c'
 
 wifi-switch() {
   iwctl station wlan0 scan
