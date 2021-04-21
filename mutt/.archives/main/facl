@@ -1,0 +1,42 @@
+# file: /
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/eastack
+# owner: eastack
+# group: eastack
+user::rwx
+group::---
+other::---
+
+# file: /home/eastack/.config
+# owner: eastack
+# group: eastack
+user::rwx
+group::---
+other::---
+
+# file: /home/eastack/.config/mutt
+# owner: eastack
+# group: eastack
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/eastack/.config/mutt/muttrc
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+

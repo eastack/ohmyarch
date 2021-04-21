@@ -121,6 +121,7 @@ reboot
 * 使用Python备份还原指定的idea配置字段（貌似 xslt + xsltproc 就可以了）
 * 私密数据分库存储，使用git-crypt进行加密
 * autostart app to systemd
+* mutt configuration
 
 == 片段
 

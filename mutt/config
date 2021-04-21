@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Enable mpd for user
+systemctl --user enable $app.service
