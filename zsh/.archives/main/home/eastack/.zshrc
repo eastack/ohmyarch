@@ -3,8 +3,8 @@ setopt autocd
 zstyle ':completion:*' menu select
 
 export HISTFILE=~/.histfile
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=10000
+export SAVEHIST=10000
 export TERM=xterm-256color
 export EDITOR=nvim
 export GPG_TTY=$(tty)
