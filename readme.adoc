@@ -122,6 +122,8 @@ reboot
 * 私密数据分库存储，使用git-crypt进行加密
 * autostart app to systemd
 * mutt configuration
+* docker config credentials store https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+* useing pass
 
 == 片段
 
