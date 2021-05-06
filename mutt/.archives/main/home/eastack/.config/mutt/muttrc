@@ -1,0 +1,3 @@
+set imap_user=admin@eastack.me
+set imap_pass=
+set folder="~/mail"
