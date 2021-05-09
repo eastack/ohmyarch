@@ -62,21 +62,21 @@ bindsym $win+8                workspace $ws8
 bindsym $win+9                workspace $ws9
 bindsym $win+0                workspace $ws10
 
-bindsym $ctrl+win+$up         move up
-bindsym $ctrl+win+$down       move down
-bindsym $ctrl+win+$left       move left
-bindsym $ctrl+win+$right      move right
+bindsym $ctrl+$win+$up        move up
+bindsym $ctrl+$win+$down      move down
+bindsym $ctrl+$win+$left      move left
+bindsym $ctrl+$win+$right     move right
 
-bindsym $ctrl+win+1           move container to workspace $ws1
-bindsym $ctrl+win+2           move container to workspace $ws2
-bindsym $ctrl+win+3           move container to workspace $ws3
-bindsym $ctrl+win+4           move container to workspace $ws4
-bindsym $ctrl+win+5           move container to workspace $ws5
-bindsym $ctrl+win+6           move container to workspace $ws6
-bindsym $ctrl+win+7           move container to workspace $ws7
-bindsym $ctrl+win+8           move container to workspace $ws8
-bindsym $ctrl+win+9           move container to workspace $ws9
-bindsym $ctrl+win+0           move container to workspace $ws10
+bindsym $ctrl+$win+1          move container to workspace $ws1
+bindsym $ctrl+$win+2          move container to workspace $ws2
+bindsym $ctrl+$win+3          move container to workspace $ws3
+bindsym $ctrl+$win+4          move container to workspace $ws4
+bindsym $ctrl+$win+5          move container to workspace $ws5
+bindsym $ctrl+$win+6          move container to workspace $ws6
+bindsym $ctrl+$win+7          move container to workspace $ws7
+bindsym $ctrl+$win+8          move container to workspace $ws8
+bindsym $ctrl+$win+9          move container to workspace $ws9
+bindsym $ctrl+$win+0          move container to workspace $ws10
 
 bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
