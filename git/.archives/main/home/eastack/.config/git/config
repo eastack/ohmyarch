@@ -21,3 +21,5 @@
         r = remote
         s = status
         w = whatchanged
+[init]
+	defaultBranch = main
