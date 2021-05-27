@@ -19,7 +19,7 @@ user::rwx
 group::---
 other::---
 
-# file: /home/eastack/.npmrc
+# file: /home/eastack/.yarnrc
 # owner: eastack
 # group: eastack
 user::rw-
