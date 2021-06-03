@@ -127,7 +127,6 @@ reboot
 * useing pass
 * bat add for switheme
 * https://github.com/i3/i3lock/issues/109
-* tinc autostart failed by systemd
 
 == 片段
 
