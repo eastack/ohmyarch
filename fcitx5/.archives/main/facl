@@ -26,21 +26,21 @@ user::rwx
 group::---
 other::---
 
-# file: /home/eastack/.config/fcitx
+# file: /home/eastack/.config/fcitx5
 # owner: eastack
 # group: eastack
 user::rwx
 group::---
 other::---
 
-# file: /home/eastack/.config/fcitx/config
+# file: /home/eastack/.config/fcitx5/config
 # owner: eastack
 # group: eastack
 user::rw-
-group::r--
-other::r--
+group::---
+other::---
 
-# file: /home/eastack/.config/fcitx/profile
+# file: /home/eastack/.config/fcitx5/profile
 # owner: eastack
 # group: eastack
 user::rw-

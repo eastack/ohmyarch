@@ -100,23 +100,23 @@ neovim_color_switch() {
   fi
 }
 
-fcitx_color_switch() {
-  if [[ $1 = 'light' ]]; then
-    mode=default
-  elif [[ $1 = 'dark' ]]; then
-    mode=dark
-  fi
-
-  now_background=`cat ~/.config/fcitx/conf/fcitx-classic-ui.config | grep SkinType | cut -d '=' -f 2`
-  if [[ $now_background = 'dark' && $mode = 'dark' ]]; then
-    return 1
-  elif [[ $now_background = 'default' && $mode = 'light' ]]; then
-    return 1
-  else
-    sed -i "s/.*SkinType=.*/SkinType=$mode/g" ~/.config/fcitx/conf/fcitx-classic-ui.config
-    fcitx-remote -r && ~/.keymapping
-  fi
-}
+#fcitx_color_switch() {
+#  if [[ $1 = 'light' ]]; then
+#    mode=default
+#  elif [[ $1 = 'dark' ]]; then
+#    mode=dark
+#  fi
+#
+#  now_background=`cat ~/.config/fcitx/conf/fcitx-classic-ui.config | grep SkinType | cut -d '=' -f 2`
+#  if [[ $now_background = 'dark' && $mode = 'dark' ]]; then
+#    return 1
+#  elif [[ $now_background = 'default' && $mode = 'light' ]]; then
+#    return 1
+#  else
+#    sed -i "s/.*SkinType=.*/SkinType=$mode/g" ~/.config/fcitx/conf/fcitx-classic-ui.config
+#    fcitx-remote -r && ~/.keymapping
+#  fi
+#}
 
 rofi_color_switch() {
   if [[ $1 = 'light' ]]; then
@@ -140,7 +140,7 @@ switheme() {
   wallpaper_color_switch $1
   alacritty_color_switch $1
   zathura_color_switch $1
-  fcitx_color_switch $1
+#  fcitx_color_switch $1
   neovim_color_switch $1
   rofi_color_switch $1
 }

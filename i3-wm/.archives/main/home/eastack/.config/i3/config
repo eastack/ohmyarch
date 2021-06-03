@@ -18,18 +18,18 @@ set $refresh_i3status  killall -SIGUSR1 i3status
 set $screenshot_copy   xclip -selection clipboard -t image/png $_
 set $screenshot_notify notify-send "Screenshot saved"
 
-font                          pango:Hack 8.5
+font                          pango:Hack 12
 default_border                pixel 0
 floating_modifier             $win
 workspace_auto_back_and_forth yes
 floating_maximum_size         2048 x 1152
 
+exec --no-startup-id dex -a
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id xset s 180 120
 exec --no-startup-id xss-lock -n ~/.config/i3/dim-screen.sh -- i3lock -u -i ~/pictures/wallpaper.png
 
-exec_always --no-startup-id fcitx-autostart
-exec_always --no-startup-id sleep 3 && ~/.keymapping
+exec_always --no-startup-id ~/.keymapping
 
 # layout
 bindsym $win+e                layout toggle split
@@ -40,7 +40,7 @@ bindsym $win+semicolon        split v
 bindsym $win+apostrophe       split h
 
 # focus
-bindsym $win+space            focus mode_toggle
+bindsym $win+Tab              focus mode_toggle
 bindsym $win+a                focus parent
 bindsym $win+$left            focus left
 bindsym $win+$down            focus down
@@ -88,7 +88,7 @@ bindsym XF86MonBrightnessUp   exec light -A 1
 bindsym $win+Print            exec maim ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
 bindsym Print                 exec --no-startup-id maim -s ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
 bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
-bindsym $win+o                exec chromium
+bindsym $win+o                exec firefox
 bindsym $win+i                exec i3-sensible-terminal
 bindsym $win+d                exec "rofi -combi-modi window,drun -show combi -modi combi"
 bindsym $win+r                mode resize
