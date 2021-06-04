@@ -33,7 +33,35 @@ user::rwx
 group::---
 other::---
 
+# file: /home/eastack/.config/fcitx5/conf
+# owner: eastack
+# group: eastack
+user::rwx
+group::---
+other::---
+
+# file: /home/eastack/.config/fcitx5/conf/classicui.conf
+# owner: eastack
+# group: eastack
+user::rw-
+group::---
+other::---
+
+# file: /home/eastack/.config/fcitx5/conf/cloudpinyin.conf
+# owner: eastack
+# group: eastack
+user::rw-
+group::---
+other::---
+
 # file: /home/eastack/.config/fcitx5/config
+# owner: eastack
+# group: eastack
+user::rw-
+group::---
+other::---
+
+# file: /home/eastack/.config/fcitx5/conf/pinyin.conf
 # owner: eastack
 # group: eastack
 user::rw-
