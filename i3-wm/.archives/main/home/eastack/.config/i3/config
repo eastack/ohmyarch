@@ -88,7 +88,7 @@ bindsym XF86MonBrightnessUp   exec light -A 1
 bindsym $win+Print            exec maim ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
 bindsym Print                 exec --no-startup-id maim -s ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
 bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
-bindsym $win+o                exec chromium --force-device-scale-factor=2
+bindsym $win+o                exec chromium
 bindsym $win+i                exec i3-sensible-terminal
 bindsym $win+d                exec "rofi -combi-modi window,drun -show combi -modi combi"
 bindsym $win+r                mode resize
