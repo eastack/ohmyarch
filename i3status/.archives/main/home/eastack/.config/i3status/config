@@ -33,7 +33,7 @@ ethernet _first_ {
 }
 
 battery all {
-  format = "🔌 %status %percentage"
+  format = "🔌 %status%percentage"
   status_chr = "C"
   status_bat = "D"
   status_unk = "F"
@@ -60,6 +60,6 @@ memory {
 }
 
 volume master {
-  format = "🔊 %volume"
-  format_muted = "🔈 %volume"
+  format = "🔉 %volume"
+  format_muted = "🔇 %volume"
 }

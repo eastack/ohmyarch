@@ -2,6 +2,5 @@ setup \
   noto-fonts \
   noto-fonts-cjk \
   noto-fonts-emoji \
-  ttf-hack \
-  ttf-jetbrains-mono \
+  otf-fira-mono \
   ttf-nerd-fonts-symbols-mono
