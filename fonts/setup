@@ -3,4 +3,5 @@ setup \
   noto-fonts-cjk \
   noto-fonts-emoji \
   otf-fira-mono \
+  ttf-hack \
   ttf-nerd-fonts-symbols-mono
