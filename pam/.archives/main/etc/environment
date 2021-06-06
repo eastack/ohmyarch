@@ -3,6 +3,13 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
+# For fcitx
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
+
+# Make GDK 3 support hidpi
+# To scale UI elements by an integer factor
+GDK_SCALE=2
+# To undo scaling of text, fractional scale
+GDK_DPI_SCALE=0.5
