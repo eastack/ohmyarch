@@ -26,3 +26,10 @@ user::rwx
 group::r-x
 other::r-x
 
+# file: /home/eastack/.KEYMAPPING
+# owner: eastack
+# group: eastack
+user::rwx
+group::r-x
+other::r-x
+
