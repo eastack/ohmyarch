@@ -19,21 +19,14 @@ user::rwx
 group::---
 other::---
 
-# file: /home/eastack/.config
-# owner: eastack
-# group: eastack
-user::rwx
-group::---
-other::---
-
-# file: /home/eastack/.config/cargo
+# file: /home/eastack/.cargo
 # owner: eastack
 # group: eastack
 user::rwx
 group::r-x
 other::r-x
 
-# file: /home/eastack/.config/cargo/config
+# file: /home/eastack/.cargo/config
 # owner: eastack
 # group: eastack
 user::rw-
