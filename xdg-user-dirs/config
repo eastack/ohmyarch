@@ -1,3 +1,4 @@
 #!/usr/bin/env zsh
 
 mkdir -p $HOME/{desktop,downloads,templates,public,documents,music,pictures,videos,mail}
+mkdir -p $HOME/desktop/{communal,corporate,personal}

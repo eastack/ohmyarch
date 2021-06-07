@@ -10,15 +10,6 @@ xmodmap -e "keysym space = Super_R"
 xmodmap -e "keycode any = space"
 xcape -e "Super_R=space"
 
-# CapsLock to Control_R
+# CapsLock to Esc
 xmodmap -e "clear Lock"
-xmodmap -e "keysym Caps_Lock = Control_R"
-xmodmap -e "add Control = Control_R"
-
-# Alt_R plus Escape
-xmodmap -e "keycode any = Escape"
-xcape -e "Alt_R=Escape"
-
-# Alt_L plus Insert
-xmodmap -e "keycode any = Insert"
-xcape -e "Alt_L=Insert"
+xmodmap -e "keysym Caps_Lock = Escape"

@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Add to vboxusers group
+sudo usermod --append --groups vboxusers $USER

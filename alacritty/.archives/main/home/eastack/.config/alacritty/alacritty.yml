@@ -5,26 +5,24 @@ env:
 # Font configuration (JetBrainsMono)
 font:
   normal:
-    family: JetBrainsMono
+    family: Fira Mono
     style: Regular
   bold:
-    family: JetBrainsMono
+    family: Fira Mono
     style: Bold
   italic:
-    family: JetBrainsMono
+    family: Fira Mono
     style: Italic
   bold_italic:
-    family: JetBrainsMono
+    family: Fira Mono
     style: Bold Italic
-  size: 10
+  size: 11.5
 
 # Colors (Gruvbox light)
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '#f9f5d7'
     background: '#282828'
-    # soft contrast: background = '#f2e5bc'
     foreground: '#ebdbb2'
 
   # Normal colors

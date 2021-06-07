@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Kill all xcape
+killall -q xcape
+# Reset keymap
+setxkbmap -option

@@ -19,14 +19,14 @@ user::rwx
 group::---
 other::---
 
-# file: /home/eastack/.cargo
+# file: /home/eastack/.config
 # owner: eastack
 # group: eastack
 user::rwx
-group::r-x
-other::r-x
+group::---
+other::---
 
-# file: /home/eastack/.cargo/config
+# file: /home/eastack/.config/chromium-flags.conf
 # owner: eastack
 # group: eastack
 user::rw-

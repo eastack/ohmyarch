@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Enable tinc service
+sudo systemctl enable $app.service
