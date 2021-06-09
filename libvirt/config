@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-# Add to libvirt group
-sudo usermod --append --groups libvirt $USER
-
-# Enable libvirtd.service
-sudo systemctl enable libvirtd.service
