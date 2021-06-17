@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Enable ntp service
+sudo timedatectl set-ntp true
