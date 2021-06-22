@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Enable cronie service
+sudo systemctl enable $app.service
