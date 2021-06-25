@@ -1,1 +1,1 @@
-setup $app virtualbox-host-modules-arch
+setup $app virtualbox-host-dkms

@@ -41,7 +41,7 @@ mount $DISK*1 /mnt/boot
 reflector --country China --protocol https --fastest 3 --save /etc/pacman.d/mirrorlist
 
 # Install essential packages
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode iwd crda zsh vi rsync man-db
+pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-lts-docs linux-firmware intel-ucode iwd crda zsh vi rsync man-db
 
 # Fstab
 genfstab -U /mnt >> /mnt/etc/fstab
