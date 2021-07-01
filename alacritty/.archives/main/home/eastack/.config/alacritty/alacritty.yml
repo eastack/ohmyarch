@@ -5,16 +5,16 @@ env:
 # Font configuration (JetBrainsMono)
 font:
   normal:
-    family: Fira Mono
+    family: JetBrains Mono
     style: Regular
   bold:
-    family: Fira Mono
+    family: JetBrains Mono
     style: Bold
   italic:
-    family: Fira Mono
+    family: JetBrains Mono
     style: Italic
   bold_italic:
-    family: Fira Mono
+    family: JetBrains Mono
     style: Bold Italic
   size: 10
 
