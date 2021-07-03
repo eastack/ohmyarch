@@ -1,3 +1,2 @@
-$HOME/.config/nvim/init.vim
-$HOME/.config/nvim/plug.vim
-$HOME/.config/nvim/base.vim
+$HOME/.config/nvim/init.lua
+$HOME/.config/nvim/lua
