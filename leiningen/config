@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# Create self-installs directory
+mkdir -p ~/.lein/self-installs
+
+# Link to installed leiningen standalone jar
+ln -sf /usr/share/java/leiningen-*-standalone.jar ~/.lein/self-installs/
