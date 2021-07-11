@@ -9,8 +9,11 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', key_mapping_opts)
 
 -- LSP keymap
 vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', key_mapping_opts)
+vim.api.nvim_set_keymap('n', 'ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', key_mapping_opts)
 vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', key_mapping_opts)
 vim.api.nvim_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', key_mapping_opts)
+vim.api.nvim_command([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+vim.api.nvim_command([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 
 local function t(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
