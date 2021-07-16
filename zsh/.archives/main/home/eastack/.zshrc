@@ -41,6 +41,7 @@ alias tree='tree -C'
 alias t='trans'
 alias v='nvim'
 alias x='xclip -rmlastnl -selection c'
+alias step='step-cli'
 
 wifi-switch() {
   iwctl station wlan0 scan
