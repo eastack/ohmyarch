@@ -127,6 +127,7 @@ reboot
 * useing pass
 * bat add for switheme
 * https://github.com/i3/i3lock/issues/109
+* wireguard
 
 == 片段
 
