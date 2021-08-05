@@ -19,7 +19,6 @@ order += "tztime local"
 cpu_temperature 0 {
   format = "🔥 %degrees°C"
   max_threshold = 60
-  path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 wireless _first_ {
@@ -37,11 +36,12 @@ battery all {
   status_chr = "C"
   status_bat = "D"
   status_unk = "F"
-  low_threshold = 90
+  low_threshold = 20
+  threshold_type = percentage
 }
 
 tztime local {
-  format = "📅 %m/%d %H:%M"
+  format = "📆 %m/%d %H:%M"
 }
 
 load {
@@ -60,6 +60,6 @@ memory {
 }
 
 volume master {
-  format = "🔉 %volume"
+  format = "🎵 %volume"
   format_muted = "🔇 %volume"
 }
