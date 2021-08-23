@@ -59,3 +59,4 @@ reconnect-touchpad() {
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
