@@ -1,0 +1,132 @@
+set $win               Mod4
+set $ctrl              Control
+set $left              h
+set $down              j
+set $up                k
+set $right             l
+set $ws1               1:1
+set $ws2               2:2
+set $ws3               3:3
+set $ws4               4:4
+set $ws5               5:5
+set $ws6               6:6
+set $ws7               7:7
+set $ws8               8:8
+set $ws9               9:9
+set $ws10              10:0
+set $refresh_i3status  killall -SIGUSR1 i3status
+set $screenshot_copy   xclip -selection clipboard -t image/png $_
+set $screenshot_notify notify-send "Screenshot saved"
+
+font                          pango:Hack 9
+default_border                pixel 0
+floating_modifier             $win
+workspace_auto_back_and_forth yes
+floating_maximum_size         2048 x 1152
+
+exec --no-startup-id dex -a
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id xset s 180 120
+exec --no-startup-id xss-lock -n ~/.config/i3/dim-screen.sh -- i3lock -u -i ~/pictures/wallpaper.png
+
+exec_always --no-startup-id ~/.keymapping
+
+# layout
+bindsym $win+e                layout toggle split
+bindsym $win+w                layout tabbed
+bindsym $win+s                layout stacking
+bindsym $win+f                fullscreen toggle
+bindsym $win+semicolon        split v
+bindsym $win+apostrophe       split h
+
+# focus
+bindsym $win+Tab              focus mode_toggle
+bindsym $win+a                focus parent
+bindsym $win+$left            focus left
+bindsym $win+$down            focus down
+bindsym $win+$up              focus up
+bindsym $win+$right           focus right
+
+# workspace
+bindsym $win+plus             move scratchpad
+bindsym $win+minus            scratchpad show
+
+bindsym $win+1                workspace $ws1
+bindsym $win+2                workspace $ws2
+bindsym $win+3                workspace $ws3
+bindsym $win+4                workspace $ws4
+bindsym $win+5                workspace $ws5
+bindsym $win+6                workspace $ws6
+bindsym $win+7                workspace $ws7
+bindsym $win+8                workspace $ws8
+bindsym $win+9                workspace $ws9
+bindsym $win+0                workspace $ws10
+
+bindsym $ctrl+$win+$up        move up
+bindsym $ctrl+$win+$down      move down
+bindsym $ctrl+$win+$left      move left
+bindsym $ctrl+$win+$right     move right
+
+bindsym $ctrl+$win+1          move container to workspace $ws1
+bindsym $ctrl+$win+2          move container to workspace $ws2
+bindsym $ctrl+$win+3          move container to workspace $ws3
+bindsym $ctrl+$win+4          move container to workspace $ws4
+bindsym $ctrl+$win+5          move container to workspace $ws5
+bindsym $ctrl+$win+6          move container to workspace $ws6
+bindsym $ctrl+$win+7          move container to workspace $ws7
+bindsym $ctrl+$win+8          move container to workspace $ws8
+bindsym $ctrl+$win+9          move container to workspace $ws9
+bindsym $ctrl+$win+0          move container to workspace $ws10
+
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessDown exec light -U 1
+bindsym XF86MonBrightnessUp   exec light -A 1
+
+bindsym $win+Print            exec maim ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
+bindsym Print                 exec --no-startup-id maim -s ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
+bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
+bindsym $win+o                exec chromium
+bindsym $win+i                exec i3-sensible-terminal
+bindsym $win+d                exec "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $win+r                mode resize
+bindsym $win+t                mode theme
+
+bindsym $win+Shift+k          kill
+bindsym $win+Shift+f          floating toggle
+bindsym $win+Shift+c          reload
+bindsym $win+Shift+r          restart
+bindsym $win+Shift+e          exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+client.focused                #282828 #282828 #ebdbb2
+client.focused_inactive       #282828 #282828 #a89984
+client.unfocused              #3c3836 #3c3836 #a89984
+
+mode theme {
+  bindsym d      exec switheme dark
+  bindsym l      exec switheme light
+  bindsym Escape mode default
+}
+
+mode resize {
+  bindsym $up    resize grow   height 10 px or 5 ppt
+  bindsym $down  resize shrink height 10 px or 5 ppt
+  bindsym $left  resize grow   width  10 px or 5 ppt
+  bindsym $right resize shrink width  10 px or 5 ppt
+  bindsym Escape mode default
+}
+
+bar {
+  status_command          i3status
+  strip_workspace_numbers yes
+  colors {
+    background         #3c3836
+    statusline         #ebdbb2
+    separator          #665c54
+    focused_workspace  #282828 #282828 #ebdbb2
+    active_workspace   #282828 #282828 #a89984
+    inactive_workspace #3c3836 #3c3836 #a89984
+  }
+}
