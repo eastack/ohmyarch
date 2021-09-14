@@ -26,8 +26,8 @@ floating_maximum_size         2048 x 1152
 
 exec --no-startup-id dex -a
 exec --no-startup-id ~/.fehbg
-exec --no-startup-id xset s 180 120
-exec --no-startup-id xss-lock -n ~/.config/i3/dim-screen.sh -- i3lock -u -i ~/pictures/wallpaper.png
+exec --no-startup-id xset s 300 5
+exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 exec_always --no-startup-id ~/.keymapping
 
@@ -85,8 +85,7 @@ bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAUL
 bindsym XF86MonBrightnessDown exec light -U 1
 bindsym XF86MonBrightnessUp   exec light -A 1
 
-bindsym $win+Print            exec maim ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
-bindsym Print                 exec --no-startup-id maim -s ~/pictures/$(date +%m%d-%H%M%S).png && $screenshot_copy && $screenshot_notify
+bindsym Print                 exec flameshot gui
 bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
 bindsym $win+o                exec chromium
 bindsym $win+i                exec i3-sensible-terminal
