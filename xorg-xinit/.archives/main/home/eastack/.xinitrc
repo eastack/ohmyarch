@@ -1,5 +1,5 @@
 # Load .Xresources
 xrdb -merge ~/.Xresources
 
-# Start awesome
-exec awesome
+# Start i3
+exec i3
