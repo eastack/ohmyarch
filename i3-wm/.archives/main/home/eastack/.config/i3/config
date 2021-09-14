@@ -86,7 +86,7 @@ bindsym XF86MonBrightnessDown exec light -U 1
 bindsym XF86MonBrightnessUp   exec light -A 1
 
 bindsym Print                 exec flameshot gui
-bindsym $win+x                exec i3lock -u -i ~/pictures/wallpaper.png
+bindsym $win+x                exec xsecurelock
 bindsym $win+o                exec chromium
 bindsym $win+i                exec i3-sensible-terminal
 bindsym $win+d                exec "rofi -combi-modi window,drun -show combi -modi combi"
