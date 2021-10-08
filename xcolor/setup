@@ -1,11 +1,1 @@
-#!/usr/bin/env zsh
-
-function main() {
-  cd $(mktemp -d)
-  trap 'rm -rf "$PWD"' EXIT
-
-  curl -sSLf https://cdn.radix10.cn/xcolor.pkg.tar.zst -O
-  sudo pacman -U --noconfirm --needed xcolor.pkg.tar.zst
-}
-
-main
+setup $app
