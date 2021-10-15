@@ -89,7 +89,7 @@ bindsym Print                 exec flameshot gui
 bindsym $win+x                exec xsecurelock
 bindsym $win+o                exec chromium
 bindsym $win+i                exec i3-sensible-terminal
-bindsym $win+d                exec "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $win+d                exec "rofi -show combi"
 bindsym $win+r                mode resize
 bindsym $win+t                mode theme
 
