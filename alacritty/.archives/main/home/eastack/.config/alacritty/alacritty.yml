@@ -1,22 +1,18 @@
-# Set environment variables
-env:
-  TERM: xterm-256color
-
-# Font configuration (JetBrainsMono)
+# Font configuration (Iosevka)
 font:
   normal:
-    family: JetBrains Mono
+    family: Iosevka
     style: Regular
   bold:
-    family: JetBrains Mono
+    family: Iosevka
     style: Bold
   italic:
-    family: JetBrains Mono
+    family: Iosevka
     style: Italic
   bold_italic:
-    family: JetBrains Mono
+    family: Iosevka
     style: Bold Italic
-  size: 10
+  size: 11
 
 # Colors (Gruvbox light)
 colors:
