@@ -131,8 +131,15 @@ reboot
 
 == 片段
 
+.修改用户名
 [source, bash]
 ----
 sed -i "s/radix10/eastack/" $(ls ./*/.archives/*/facl)
 ls -d ./*/.archives/*/home/radix10 | xargs -I file sh -c 'sudo mv file $(dirname file)/eastack'
+----
+
+.设置电池充电阀值
+[source, bash]
+----
+sudo tlp setcharge 75 80
 ----
