@@ -3,5 +3,5 @@ setup \
   noto-fonts-cjk \
   noto-fonts-emoji \
   ttf-hack \
-  ttf-jetbrains-mono \
+  ttc-iosevka \
   ttf-nerd-fonts-symbols-mono
