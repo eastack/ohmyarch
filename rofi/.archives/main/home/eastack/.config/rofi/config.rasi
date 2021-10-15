@@ -1,8 +1,9 @@
 configuration {
   font: "Cantarell 23";
   show-icons: true;
-  theme: "gruvbox-dark";
+  combi-modi: "window,drun,ssh";
 }
+@theme  "gruvbox-dark";
 element-icon {
     size: 1.0em ;
 }
