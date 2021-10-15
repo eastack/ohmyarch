@@ -143,3 +143,24 @@ ls -d ./*/.archives/*/home/radix10 | xargs -I file sh -c 'sudo mv file $(dirname
 ----
 sudo tlp setcharge 75 80
 ----
+
+.适用于机械键盘的键盘映射配置
+[source, bash]
+----
+#!/bin/sh
+
+# Kill all xcape
+killall -q xcape
+# Reset keymap
+setxkbmap -option
+
+# Space plus Control_R
+xmodmap -e "keysym space = Control_R"
+xmodmap -e "add Control = Control_R"
+xmodmap -e "keycode any = space"
+xcape -e "Control_R=space"
+
+# CapsLock to Esc
+xmodmap -e "clear Lock"
+xmodmap -e "keysym Caps_Lock = Escape"
+----
