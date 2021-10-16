@@ -10,6 +10,7 @@ vim.o["termguicolors"] = true
 
 -- 补全代码时模糊匹配
 vim.g["completion_matching_strategy_list"] = {'exact', 'substring', 'fuzzy', 'all'}
+vim.g["completion_trigger_character"] = {'.', '::'}
 -- 补全菜单显示逻辑
 vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 -- 在补全时不显示详细信息

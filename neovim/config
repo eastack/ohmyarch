@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-sh -c 'curl -sSfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+git clone --depth 1 https://ghproxy.com/https://github.com/wbthomason/packer.nvim\
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-nvim --headless -u $HOME/.config/nvim/plug.vim +PlugInstall +qall
+nvim --headless +PackerInstall +qall
