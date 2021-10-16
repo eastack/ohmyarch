@@ -131,7 +131,7 @@ rofi_color_switch() {
   elif [[ $now_background =~ 'light' && $mode = 'light' ]]; then
     return 1
   else
-    sed -i "s/gruvbox-.*/$mode\";/g" ~/.config/rofi/config.rasi
+    sed -i "s/gruvbox-.*/$mode\"/g" ~/.config/rofi/config.rasi
   fi
 }
 
