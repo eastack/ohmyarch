@@ -1,1 +1,2 @@
 setup $app
+restore .archives/*(/)
