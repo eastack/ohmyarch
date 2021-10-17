@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf $HOME/.config/fontconfig/conf.d/10-sub-pixel-rgb.conf
