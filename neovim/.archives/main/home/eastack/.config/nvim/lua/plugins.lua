@@ -1,4 +1,7 @@
 return require('packer').startup(function()
+  use "https://ghproxy.com/https://github.com/hrsh7th/cmp-nvim-lsp"
+  use "https://ghproxy.com/https://github.com/hrsh7th/cmp-buffer"
+  use "https://ghproxy.com/https://github.com/hrsh7th/nvim-cmp"
   use "https://ghproxy.com/https://github.com/wbthomason/packer.nvim"
   use "https://ghproxy.com/https://github.com/morhetz/gruvbox"
   use "https://ghproxy.com/https://github.com/editorconfig/editorconfig-vim"
