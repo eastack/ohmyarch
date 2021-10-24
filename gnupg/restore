@@ -1,1 +1,2 @@
 restore .archives/*(/)
+gpg --import .archives/main$HOME/.gnupg/gpg-0x7469ECED938EB26A-2021-10-24.asc

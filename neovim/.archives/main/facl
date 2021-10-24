@@ -47,6 +47,13 @@ user::rwx
 group::r-x
 other::r-x
 
+# file: /home/eastack/.config/nvim/lua/keymaps.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
 # file: /home/eastack/.config/nvim/lua/plugins.lua
 # owner: eastack
 # group: eastack
@@ -55,13 +62,6 @@ group::r--
 other::r--
 
 # file: /home/eastack/.config/nvim/lua/options.lua
-# owner: eastack
-# group: eastack
-user::rw-
-group::r--
-other::r--
-
-# file: /home/eastack/.config/nvim/lua/keymaps.lua
 # owner: eastack
 # group: eastack
 user::rw-

@@ -1,4 +1,1 @@
-$HOME/.gnupg/gpg-agent.conf
 $HOME/.gnupg/gpg.conf
-$HOME/.gnupg/pubring.kbx
-$HOME/.gnupg/trustdb.gpg
