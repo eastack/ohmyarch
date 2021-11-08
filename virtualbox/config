@@ -2,3 +2,4 @@
 
 # Add to vboxusers group
 sudo usermod --append --groups vboxusers $USER
+VBoxManage setproperty machinefolder ~/vms
