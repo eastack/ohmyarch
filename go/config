@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+go env -w GOPROXY=https://goproxy.cn,direct
