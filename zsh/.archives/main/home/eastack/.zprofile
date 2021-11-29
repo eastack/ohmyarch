@@ -1,4 +1,4 @@
-path=(~/.local/bin $path)
+path=(~/.local/bin ~/go/bin $path)
 
 export TERM=xterm-256color
 export HISTFILE=~/.histfile
