@@ -7,6 +7,7 @@ return require('packer').startup(function()
   use "https://ghproxy.com/https://github.com/neovim/nvim-lspconfig"
   use "https://ghproxy.com/https://github.com/junegunn/vim-easy-align"
   use "https://ghproxy.com/https://github.com/easymotion/vim-easymotion"
+  use "https://ghproxy.com/https://github.com/lilydjwg/fcitx.vim"
   use {
     "https://ghproxy.com/https://github.com/kyazdani42/nvim-tree.lua",
     requires = "https://ghproxy.com/https://github.com/kyazdani42/nvim-web-devicons"
