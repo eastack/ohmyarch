@@ -15,8 +15,6 @@ set $ws8               8:8
 set $ws9               9:9
 set $ws10              10:0
 set $refresh_i3status  killall -SIGUSR1 i3status
-set $screenshot_copy   xclip -selection clipboard -t image/png $_
-set $screenshot_notify notify-send "Screenshot saved"
 
 font                          pango:Hack 9
 default_border                pixel 0
