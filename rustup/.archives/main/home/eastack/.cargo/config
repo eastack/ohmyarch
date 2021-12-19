@@ -1,5 +1,0 @@
-[source.crates-io]
-replace-with = 'my-awesome-registry'
-
-[source.my-awesome-registry]
-registry = 'https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git'
