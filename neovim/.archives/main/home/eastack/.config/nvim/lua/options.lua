@@ -1,5 +1,5 @@
 vim.cmd([[colorscheme gruvbox]])
-vim.o["background"] = "light"
+vim.o["background"] = "dark"
 vim.o["cursorline"] = true
 -- LSP 当前 buffer 未保存时跳转报错
 vim.o["hidden"] = true
