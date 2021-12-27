@@ -15,4 +15,3 @@ vim.g["completion_trigger_character"] = {'.', '::'}
 vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 -- 在补全时不显示详细信息
 vim.opt.shortmess:append({ c = true })
-
