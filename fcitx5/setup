@@ -1,1 +1,1 @@
-setup $app fcitx5-chinese-addons fcitx5-configtool fcitx5-qt fcitx5-gtk
+setup $app fcitx5-chinese-addons fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-pinyin-zhwiki
