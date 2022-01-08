@@ -1,0 +1,3 @@
+setup $app \
+  kicad-library \
+  kicad-library-3d
