@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
 
-mkdir -p $HOME/.config/fontconfig/conf.d
-ln -sf /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf $HOME/.config/fontconfig/conf.d/10-sub-pixel-rgb.conf
+AVAIL_FONT_CONF='/usr/share/fontconfig/conf.avail'
+
+sudo ln -sf $AVAIL_FONT_CONF/10-sub-pixel-rgb.conf \
+	$AVAIL_FONT_CONF/11-lcdfilter-default.conf \
+	/etc/fonts/conf.d/
