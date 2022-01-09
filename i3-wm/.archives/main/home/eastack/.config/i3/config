@@ -27,8 +27,6 @@ exec --no-startup-id ~/.fehbg
 exec --no-startup-id xset s 300 5
 exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
-exec_always --no-startup-id ~/.keymapping
-
 # layout
 bindsym $win+e                layout toggle split
 bindsym $win+w                layout tabbed
