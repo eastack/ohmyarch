@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Enable udevmon.service
+sudo systemctl enable udevmon.service
