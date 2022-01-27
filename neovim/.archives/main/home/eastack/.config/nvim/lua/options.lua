@@ -1,12 +1,12 @@
+vim.o.background = "light"
 vim.cmd([[colorscheme gruvbox]])
-vim.o["background"] = "dark"
-vim.o["cursorline"] = true
+vim.o.cursorline = true
 -- LSP 当前 buffer 未保存时跳转报错
-vim.o["hidden"] = true
-vim.o["mouse"] = "nv"
-vim.o["number"] = true
-vim.o["relativenumber"] = true
-vim.o["termguicolors"] = true
+vim.o.hidden = true
+vim.o.mouse = "nv"
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.termguicolors = true
 
 -- 补全代码时模糊匹配
 vim.g["completion_matching_strategy_list"] = {'exact', 'substring', 'fuzzy', 'all'}

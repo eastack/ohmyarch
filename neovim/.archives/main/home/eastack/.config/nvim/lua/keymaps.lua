@@ -1,6 +1,4 @@
-vim.g.mapleader = " "
-
-require 'nvim-tree'.setup{}
+vim.g.mapleader = ' '
 
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('x', ' ', '', opts)
@@ -22,6 +20,16 @@ vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', 
 vim.api.nvim_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 vim.api.nvim_command([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 vim.api.nvim_command([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+
+-- Hop
+vim.api.nvim_set_keymap('n', '<leader>hw', [[<cmd>HopWord<cr>]], opts)
+vim.api.nvim_set_keymap('n', '<leader>hl', [[<cmd>HopLine<cr>]], opts)
+vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
 
 local function t(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)

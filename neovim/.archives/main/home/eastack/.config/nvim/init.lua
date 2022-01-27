@@ -1,12 +1,15 @@
-require("plugins")
-require("options")
-require("keymaps")
+require'plugins'
+require'options'
+require'keymaps'
 
+
+-- Telescope
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
+require'telescope'.load_extension('fzf')
 
--- Setup nvim-treesitter.
+
+-- TreeSitter
 require'nvim-treesitter.configs'.setup {
   highlight = { enable = true },
   autopairs = { enable = true },
@@ -22,34 +25,12 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- Setup nvim-cmp.
-local cmp = require'cmp'
 
-cmp.setup({
-  mapping = {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  },
-  snippet = {
-      expand = function(args)
-	vim.fn["vsnip#anonymous"](args.body)
-      end
-  },
-  sources = {
-    { name = 'luasnip' },
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-  }
-})
+-- LspConfig
+local cap = vim.lsp.protocol.make_client_capabilities()
+cap = require('cmp_nvim_lsp').update_capabilities(cap)
 
--- Setup lspconfig
-local nvim_lsp = require('lspconfig')
-local cap = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local caaa = ""
-
+local nvim_lsp = require'lspconfig'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -86,9 +67,9 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'gopls' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'gopls', 'sumneko_lua' }
+for _, server in ipairs(servers) do
+  nvim_lsp[server].setup {
     on_attach = on_attach,
     capabilities = cap,
     flags = {
@@ -97,4 +78,65 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-require('nvim-autopairs').setup{}
+
+-- Luasnip
+local luasnip = require 'luasnip'
+
+-- nvim-cmp
+local cmp = require'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      require'luasnip'.lsp_expand(args.body)
+    end,
+  },
+  mapping = {
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behivior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'cmdline' },
+  }
+}
+
+
+-- Autopairs
+require'nvim-autopairs'.setup()
+require'hop'.setup()
+require'nvim-tree'.setup()
+require'lualine'.setup {
+	options = {
+        	component_separators = '|',
+        	section_separators = '',
+	},
+	sections = {
+		lualine_x = {'encoding'}
+	}
+}
