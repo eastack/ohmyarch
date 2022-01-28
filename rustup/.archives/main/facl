@@ -26,7 +26,7 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/eastack/.cargo/config.toml
+# file: /home/eastack/.cargo/config
 # owner: eastack
 # group: eastack
 user::rw-
