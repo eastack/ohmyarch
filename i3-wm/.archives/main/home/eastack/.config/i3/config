@@ -16,7 +16,7 @@ set $ws9               9:9
 set $ws10              10:0
 set $refresh_i3status  killall -SIGUSR1 i3status
 
-font                          pango:Hack 9
+font                          pango:Hack 10
 default_border                pixel 0
 floating_modifier             $win
 workspace_auto_back_and_forth yes
