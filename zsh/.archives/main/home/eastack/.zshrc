@@ -50,12 +50,6 @@ reconnect-touchpad() {
   echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 }
 
-set_win_title(){
-    echo -ne "\033]0; $USER "$PWD" \007"
-}
-
-precmd_functions+=(set_win_title)
-
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
