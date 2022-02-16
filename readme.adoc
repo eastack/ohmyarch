@@ -126,6 +126,7 @@ reboot
 * docker config credentials store https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 * useing pass
 * bat add for switheme
+* gnupg and openssh rebackup
 
 == 片段
 
