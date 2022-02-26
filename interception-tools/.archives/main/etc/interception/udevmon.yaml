@@ -3,4 +3,4 @@
     | caps2esc
     | uinput -d $DEVNODE"
   DEVICE:
-    LINK: /dev/input/by-id/usb-Milsky_66EC-S_CA2017120001-event-kbd
+    LINK: .*-event-kbd
