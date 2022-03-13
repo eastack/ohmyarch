@@ -1,5 +1,5 @@
 configuration {
-  font: "Cantarell 23";
+  font: "iosevka 30";
   show-icons: true;
   combi-modi: "window,drun,ssh";
 }
