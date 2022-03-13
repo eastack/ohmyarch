@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-systemctl --user enable $app.service
