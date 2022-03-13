@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-mkdir -p $HOME/.config/autostart
-ln -sf /usr/share/applications/redshift-gtk.desktop $HOME/.config/autostart/redshift-gtk.desktop
