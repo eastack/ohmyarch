@@ -44,7 +44,7 @@ echo "setup $app finished" # <3>
 ----
 <1> 本质上是 `shell` 脚本，可以书写任意有效 `shell` 语句
 <2> `setup` 是 `ohmyarch` 提供的函数，通过 `pacman` 安装指定应用
-<2> 变量 `app` 的值由 `ohmyarch` 提供，取值自当前所处文件夹，比如这里是 `zsh`
+<3> 变量 `app` 的值由 `ohmyarch` 提供，取值自当前所处文件夹，比如这里是 `zsh`
 
 最后执行下面的命令便可以执行 `zsh/setup` 脚本。
 [source, bash]
@@ -142,3 +142,6 @@ ls -d ./*/.archives/*/home/radix10 | xargs -I file sh -c 'sudo mv file $(dirname
 ----
 sudo tlp setcharge 75 80
 ----
+
+
+image::https://resources.jetbrains.com/storage/products/company/brand/logos/jb_square.svg[]
