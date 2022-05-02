@@ -47,21 +47,84 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/eastack/.config/nvim/lua/options.lua
+# file: /home/eastack/.config/nvim/lua/packer_init.lua
 # owner: eastack
 # group: eastack
 user::rw-
 group::r--
 other::r--
 
-# file: /home/eastack/.config/nvim/lua/keymaps.lua
+# file: /home/eastack/.config/nvim/lua/plugins
+# owner: eastack
+# group: eastack
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/eastack/.config/nvim/lua/plugins/nvim-treesitter.lua
 # owner: eastack
 # group: eastack
 user::rw-
 group::r--
 other::r--
 
-# file: /home/eastack/.config/nvim/lua/plugins.lua
+# file: /home/eastack/.config/nvim/lua/plugins/nvim-telescope.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.config/nvim/lua/plugins/nvim-cmp.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.config/nvim/lua/plugins/nvim-tree.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.config/nvim/lua/plugins/nvim-lualine.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.config/nvim/lua/plugins/nvim-lspconfig.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.config/nvim/lua/core
+# owner: eastack
+# group: eastack
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/eastack/.config/nvim/lua/core/keymaps.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.config/nvim/lua/core/settings.lua
+# owner: eastack
+# group: eastack
+user::rw-
+group::r--
+other::r--
+
+# file: /home/eastack/.config/nvim/lua/core/colors.lua
 # owner: eastack
 # group: eastack
 user::rw-
