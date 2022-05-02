@@ -1,66 +1,38 @@
+# Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id xset s 300 5
 exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
-set $win              Mod4
-set $ctrl             Control
-set $left             h
-set $down             j
-set $up               k
-set $right            l
-set $ws1              1:1
-set $ws2              2:2
-set $ws3              3:3
-set $ws4              4:4
-set $ws5              5:5
-set $ws6              6:6
-set $ws7              7:7
-set $ws8              8:8
-set $ws9              9:9
-set $ws10             10:0
 
-font                          pango:Hack 12
-default_border                pixel 2
-floating_modifier             $win
-floating_maximum_size         2048 x 1152
+# Appearence 
+font pango:Hack 12
+default_border pixel 2
+client.focused          #7c6f64 #665c54 #ebdbb2 #458588 #665c54
+client.focused_inactive #665c54 #50494f #ebdbb2 #7c6f64 #50494f
+client.unfocused        #50494f #3c3836 #a89984 #7c6f64 #3c3836
+client.urgent           #fb4934 #cc241d #ebdbb2 #ebdbb2 #cc241d
+client.placeholder      #50494f #3c3836 #a89984 #665c54 #3c3836
+client.background       #282828
 
-client.focused          #5a657d #5a657d #ebdbb2
-client.focused_inactive #39404f #39404f #ebdbb2
-client.unfocused        #232831 #232831 #7e8188
-client.urgent           #bf616a #bf616a #e4e9f0
-client.placeholder      #39404f #39404f #ebdbb2
-client.background       #2e3440
 
-mode theme {
-  bindsym d      exec switheme dark
-  bindsym l      exec switheme light
-  bindsym Escape mode default
-}
-
-mode resize {
-  bindsym $up    resize grow   height 10 px or 5 ppt
-  bindsym $down  resize shrink height 10 px or 5 ppt
-  bindsym $left  resize grow   width  10 px or 5 ppt
-  bindsym $right resize shrink width  10 px or 5 ppt
-  bindsym Escape mode default
-}
-
-bar {
-  status_command          i3status
-  strip_workspace_numbers yes
-
-  colors {
-    background         #232831
-    statusline         #abb1bb
-    separator          #60728a
-    focused_workspace  #5a657d #5a657d #ebdbb2
-    active_workspace   #39404f #39404f #ebdbb2
-    inactive_workspace #39404f #39404f #7e8188
-    urgent_workspace   #bf616a #bf616a #ebdbb2
-    binding_mode       #bf616a #bf616a #ebdbb2
-  }
-}
+# Variables
+set $win   Mod4
+set $ctrl  Control
+set $up    k
+set $down  j
+set $left  h
+set $right l
+set $ws1   1:1
+set $ws2   2:2
+set $ws3   3:3
+set $ws4   4:4
+set $ws5   5:5
+set $ws6   6:6
+set $ws7   7:7
+set $ws8   8:8
+set $ws9   9:9
+set $ws10  10:0
 
 
 # Layout
@@ -73,6 +45,8 @@ bindsym $win+s layout stacking
 bindsym $win+f fullscreen toggle
 # toggle tiling /floating
 bindsym $win+Shift+f floating toggle
+# press floating modifier and click floating window to move it
+floating_modifier $win
 
 # split in horizontal orientation
 bindsym $win+semicolon split v
@@ -128,14 +102,6 @@ bindsym $ctrl+$win+0 move container to workspace $ws10
 
 
 # Shortcut Key
-bindsym Print  exec flameshot gui
-bindsym $win+x exec xsecurelock
-bindsym $win+o exec chromium
-bindsym $win+i exec i3-sensible-terminal
-bindsym $win+d exec "rofi -show combi"
-bindsym $win+r mode resize
-bindsym $win+t mode theme
-
 # kill focused window
 bindsym $win+Shift+q kill
 # reload the configuration file
@@ -155,3 +121,47 @@ bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAUL
 bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# screenshot
+bindsym Print  exec flameshot gui
+# screenlock
+bindsym $win+x exec xsecurelock
+# launch chromium
+bindsym $win+o exec chromium
+# start sensible terminal
+bindsym $win+i exec i3-sensible-terminal
+# application launcher
+bindsym $win+d exec "rofi -show combi"
+# switch binding mode
+bindsym $win+r mode resize
+bindsym $win+t mode theme
+
+mode theme {
+  bindsym d      exec switheme dark
+  bindsym l      exec switheme light
+  bindsym Escape mode default
+}
+
+mode resize {
+  bindsym $up    resize grow   height 10 px or 5 ppt
+  bindsym $down  resize shrink height 10 px or 5 ppt
+  bindsym $left  resize grow   width  10 px or 5 ppt
+  bindsym $right resize shrink width  10 px or 5 ppt
+  bindsym Escape mode default
+}
+
+bar {
+  status_command          i3status
+  strip_workspace_numbers yes
+
+  colors {
+    background         #3c3836
+    statusline         #ebdbb2
+    separator          #665c54 
+    focused_workspace  #7c6f64 #665c54 #ebdbb2
+    active_workspace   #665c54 #50494f #ebdbb2
+    inactive_workspace #665c54 #50494f #83786e
+    urgent_workspace   #fb4934 #cc241d #ebdbb2
+    binding_mode       #fb4934 #cc241d #ebdbb2
+  }
+}
