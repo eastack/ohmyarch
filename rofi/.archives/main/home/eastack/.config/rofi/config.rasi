@@ -1,5 +1,5 @@
 configuration {
-  font: "iosevka 30";
+  font: "Hack 30";
   show-icons: true;
   combi-modi: "window,drun,ssh";
 }
