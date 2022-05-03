@@ -12,7 +12,7 @@ hide_edge_borders smart
 client.focused          #7c6f64 #665c54 #ebdbb2 #458588 #665c54
 client.focused_inactive #665c54 #504945 #ebdbb2 #7c6f64 #504945
 client.unfocused        #504945 #3c3836 #928374 #7c6f64 #3c3836
-client.urgent           #fb4934 #cc241d #ebdbb2 #ebdbb2 #cc241d
+client.urgent           #9d0006 #cc241d #ebdbb2 #ebdbb2 #cc241d
 client.placeholder      #504945 #3c3836 #928374 #665c54 #3c3836
 client.background       #282828
 
@@ -162,7 +162,7 @@ bar {
     focused_workspace  #7c6f64 #665c54 #ebdbb2
     active_workspace   #665c54 #504945 #ebdbb2
     inactive_workspace #665c54 #504945 #928374
-    urgent_workspace   #fb4934 #cc241d #ebdbb2
-    binding_mode       #fb4934 #cc241d #ebdbb2
+    urgent_workspace   #9d0006 #cc241d #ebdbb2
+    binding_mode       #9d0006 #cc241d #ebdbb2
   }
 }
