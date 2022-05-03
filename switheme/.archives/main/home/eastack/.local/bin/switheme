@@ -45,6 +45,8 @@ fcitx_scheme_table = {
 
 zathura_color_table = i3_color_table
 
+delta_scheme_table = bat_scheme_table
+
 def reverse_token(token_table, filename):
     file = open(filename, "rt")
     data = file.read()
@@ -70,7 +72,7 @@ def toggle_i3_theme():
     os.system('i3-msg restart > /dev/null 2>&1')
 
 def toggle_alacritty_theme():
-    reverse_token(i3_color_table, Path.home() / '.config/alacritty/alacritty.yml')
+    reverse_token(alacritty_scheme_table, Path.home() / '.config/alacritty/alacritty.yml')
 
 def toggle_neovim_theme():
     reverse_token(neovim_scheme_table, Path.home() / '.config/nvim/lua/core/colors.lua')
@@ -100,6 +102,9 @@ def toggle_fcitx_theme():
 def toggle_zathura_theme():
     reverse_token(zathura_color_table, Path.home() / '.config/zathura/zathurarc')
 
+def toggle_delta_theme():
+    reverse_token(delta_scheme_table, Path.home() / '.config/git/config')
+
 toggle_i3_theme()
 toggle_alacritty_theme()
 toggle_neovim_theme()
@@ -108,3 +113,4 @@ toggle_rofi_theme()
 toggle_wrapper_theme()
 toggle_fcitx_theme()
 toggle_zathura_theme()
+toggle_delta_theme()
