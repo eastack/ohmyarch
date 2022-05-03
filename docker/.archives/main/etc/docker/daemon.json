@@ -1,3 +1,4 @@
 {
-  "exec-opts": ["native.cgroupdriver=systemd"]
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "registry-mirrors": ["https://hub-mirror.c.163.com"]
 }
