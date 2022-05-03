@@ -10,10 +10,10 @@ font pango:Hack 12
 default_border pixel 2
 hide_edge_borders smart
 client.focused          #7c6f64 #665c54 #ebdbb2 #458588 #665c54
-client.focused_inactive #665c54 #504945 #ebdbb2 #7c6f64 #504945
-client.unfocused        #504945 #3c3836 #928374 #7c6f64 #3c3836
+client.focused_inactive #665c54 #504945 #ebdbb2 #076678 #504945
+client.unfocused        #504945 #3c3836 #928374 #076678 #3c3836
 client.urgent           #9d0006 #cc241d #ebdbb2 #ebdbb2 #cc241d
-client.placeholder      #504945 #3c3836 #928374 #665c54 #3c3836
+client.placeholder      #504945 #3c3836 #928374 #076678 #3c3836
 client.background       #282828
 
 
