@@ -1,148 +1,110 @@
-#!/usr/bin/env bash
+#!/usr/bin/python
 
-background="fbf1c7 282828"
-foreground="3c3836 ebdbb2"
-normal_white="7c6f64 a89984"
-bright_red="9d0006 fb4934"
-bright_green="79740e b8bb26"
-bright_yellow="b57614 fabd2f"
-bright_blue="076678 83a598"
-bright_magenta="8f3f71 d3869b"
-bright_cyan="427b58 8ec07c"
-background_i3="ebdbb2 3c3836"
-separator_i3="bdae93 665c54"
-bg2="d5c4a1 504945"
-bright_oange="af3a03 fe8019"
-                        
-replace_color() {
-  for colors in background foreground normal_white bright_red bright_green bright_yellow bright_blue bright_magenta bright_cyan background_i3 separator_i3 bg2 bright_oange
-  do            
-    eval color=\$$colors && color=($color)
-    if [[ $1 = 'dark' ]]
-    then
-	    sed -i ":label;N;s/${color[0]}\(\"\|\s\|'\)/${color[1]}balabalabala\1/g;b label" ${@:2:${#@}}
-    elif [[ $1 = 'light' ]]
-    then
-	    sed -i ":label;N;s/${color[1]}\(\"\|\s\|'\)/${color[0]}balabalabala\1/g;b label" ${@:2:${#@}}
-    else 
-      return 1
-    fi
-  done
-  sed -i "s/balabalabala//g" ${@:2:${#@}}
+from pathlib import Path
+import os
+
+# https://github.com/morhetz/gruvbox
+i3_color_table = {
+    '#1d2021': '#f9f5d7',
+    '#282828': '#fbf1c7',
+    '#32302f': '#f2e5bc',
+    '#3c3836': '#ebdbb2',
+    '#504945': '#d5c4a1',
+    '#665c54': '#bdae93',
+    '#7c6f64': '#a89984',
+    '#83a598': '#076678',
+    '#8ec07c': '#427b58',
+    '#b8bb26': '#79740e',
+    '#d3869b': '#8f3f71',
+    '#fabd2f': '#b57614',
+    '#fb4934': '#9d0006',
+    '#fe8019': '#af3a03',
 }
 
-i3_color_switch () {
-  now_background=`cat ~/.config/i3/config | grep background | cut -d '#' -f 2`
-  if [[ $now_background = '3c3836' && $1 = 'dark' ]]
-  then
-	  return 1
-  elif [[ $now_background = 'ebdbb2' && $1 = 'light' ]]
-  then
-	  return 1
-  else
-    replace_color $1 ~/.config/i3/config ~/.config/i3status/config
-    i3-msg restart > /dev/null 
-  fi
+alacritty_scheme_table = {
+    'colors: *gruvbox_dark': 
+    'colors: *gruvbox_light',
 }
 
-wallpaper_color_switch () {
-  if [[ $1 = 'dark' ]]
-  then
-    cd ~/pictures
-    ln -sf ./wallpaper_dark.png ./wallpaper.png
-    cd $OLDPWD
-  else
-    cd ~/pictures
-    ln -sf ./wallpaper_light.png ./wallpaper.png
-    cd $OLDPWD
-  fi
-
-  ~/.fehbg
+neovim_scheme_table = {
+        'vim.opt.background = "dark"': 
+        'vim.opt.background = "light"'
 }
 
-alacritty_color_switch() {
-  now_background=`cat ~/.config/alacritty/alacritty.yml | grep background: | grep -v \# | cut -d 'x' -f 2 | cut -d "'" -f 1`
-  if [[ $now_background = '282828' && $1 = 'dark' ]]
-  then
-	  return 1
-  elif [[ $now_background = 'fbf1c7' && $1 = 'light' ]]
-  then
-	  return 1
-  else
-    replace_color $1 ~/.config/alacritty/alacritty.yml
-  fi
+bat_scheme_table = {
+        'gruvbox-dark': 
+        'gruvbox-light'
 }
 
-zathura_color_switch() {
-  now_background=`cat ~/.config/zathura/zathurarc | grep notification-error-bg | cut -d "#" -f 2 | cut -d '"' -f 1`
-  if [[ $now_background = '282828' && $1 = 'dark' ]]
-  then
-	  return 1
-  elif [[ $now_background = 'fbf1c7' && $1 = 'light' ]]
-  then
-	  return 1
-  else
-    replace_color $1 ~/.config/zathura/zathurarc
-  fi
+rofi_scheme_table = bat_scheme_table
+
+fcitx_scheme_table = {
+        'Material-Color-Blue':
+        'Material-Color-Black'
 }
 
-neovim_color_switch() {
-  now_background=`nvim --headless +'set background?' +qall | cut -d "=" -f 2`
-  if [[ $now_background = 'dark' && $1 = 'dark' ]]
-  then
-	  return 1
-  elif [[ $now_background = 'light' && $1 = 'light' ]]
-  then
-	  return 1
-  else
-    sed -i "s/set background=.*/set background=$1/g" ~/.config/nvim/base.vim
-    python ~/.local/bin/switheme_neovim.py $1
-  fi
-}
+zathura_color_table = i3_color_table
 
-fcitx_color_switch() {
-  if [[ $1 = 'light' ]]; then
-    mode=default
-  elif [[ $1 = 'dark' ]]; then
-    mode=dark
-  fi
+def reverse_token(token_table, filename):
+    file = open(filename, "rt")
+    data = file.read()
+    
+    for k, v in token_table.items():
+        v = '❤️'.join(list(v))
+        data = data.replace(k, v)
 
-  now_background=`cat ~/.config/fcitx/conf/fcitx-classic-ui.config | grep SkinType | cut -d '=' -f 2`
-  if [[ $now_background = 'dark' && $mode = 'dark' ]]; then
-    return 1
-  elif [[ $now_background = 'default' && $mode = 'light' ]]; then
-    return 1
-  else
-    sed -i "s/.*SkinType=.*/SkinType=$mode/g" ~/.config/fcitx/conf/fcitx-classic-ui.config
-    fcitx-remote -r && ~/.keymapping
-  fi
-}
+    for k, v in token_table.items():
+        k = '❤️'.join(list(k))
+        data = data.replace(v, k)
+    
+    file.close()
+    
+    file = open(filename, "wt")
+    data = data.replace('❤️', '')
+    file.write(data)
+    file.close()
 
-rofi_color_switch() {
-  if [[ $1 = 'light' ]]; then
-    mode='gruvbox-light'
-  elif [[ $1 = 'dark' ]]; then
-    mode='gruvbox-dark'
-  fi
+def toggle_i3_theme():
+    reverse_token(i3_color_table, Path.home() / '.config/i3/config')
+    reverse_token(i3_color_table, Path.home() / '.config/i3status/config')
+    os.system('i3-msg restart > /dev/null 2>&1')
 
-  now_background=`cat ~/.config/rofi/config.rasi| grep -v '\/\*' | grep theme:`
-  if [[ $now_background =~ 'dark' && $mode = 'dark' ]]; then
-    return 1
-  elif [[ $now_background =~ 'light' && $mode = 'light' ]]; then
-    return 1
-  else
-    sed -i "s/gruvbox-.*/$mode\"/g" ~/.config/rofi/config.rasi
-  fi
-}
+def toggle_alacritty_theme():
+    reverse_token(i3_color_table, Path.home() / '.config/alacritty/alacritty.yml')
 
-switheme() {
-  i3_color_switch $1
-  wallpaper_color_switch $1
-  alacritty_color_switch $1
-  zathura_color_switch $1
-  fcitx_color_switch $1
-  neovim_color_switch $1
-  rofi_color_switch $1
-}
+def toggle_neovim_theme():
+    reverse_token(neovim_scheme_table, Path.home() / '.config/nvim/lua/core/colors.lua')
+    
+def toggle_bat_theme():
+    reverse_token(bat_scheme_table, Path.home() / '.config/bat/config')
 
-switheme $1
+def toggle_rofi_theme():
+    reverse_token(rofi_scheme_table, Path.home() / '.config/rofi/config.rasi')
+
+def toggle_wrapper_theme():
+    pictures = Path.home() / 'pictures'
+    os.chdir(pictures)
+
+    target = os.readlink(pictures / 'wallpaper.png')
+    if 'light' in target:
+        os.system('ln -sf wallpaper_dark.png wallpaper.png')
+    elif 'dark' in target:
+        os.system('ln -sf wallpaper_light.png wallpaper.png')
+
+    os.system(Path.home() / '.fehbg')
+
+def toggle_fcitx_theme():
+    reverse_token(fcitx_scheme_table, Path.home() / '.config/fcitx5/conf/classicui.conf')
+    os.system('fcitx5 -rd > /dev/null 2>&1')
+
+def toggle_zathura_theme():
+    reverse_token(zathura_color_table, Path.home() / '.config/zathura/zathurarc')
+
+toggle_i3_theme()
+toggle_alacritty_theme()
+toggle_neovim_theme()
+toggle_bat_theme()
+toggle_rofi_theme()
+toggle_wrapper_theme()
+toggle_fcitx_theme()
+toggle_zathura_theme()

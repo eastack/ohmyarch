@@ -40,10 +40,3 @@ user::rwx
 group::r-x
 other::r-x
 
-# file: /home/eastack/.local/bin/switheme_neovim.py
-# owner: eastack
-# group: eastack
-user::rwx
-group::r-x
-other::r-x
-
