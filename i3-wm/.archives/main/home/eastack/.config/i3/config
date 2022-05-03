@@ -8,11 +8,12 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 # Appearence 
 font pango:Hack 12
 default_border pixel 2
+hide_edge_borders smart
 client.focused          #7c6f64 #665c54 #ebdbb2 #458588 #665c54
-client.focused_inactive #665c54 #50494f #ebdbb2 #7c6f64 #50494f
-client.unfocused        #50494f #3c3836 #a89984 #7c6f64 #3c3836
+client.focused_inactive #665c54 #504945 #ebdbb2 #7c6f64 #504945
+client.unfocused        #504945 #3c3836 #928374 #7c6f64 #3c3836
 client.urgent           #fb4934 #cc241d #ebdbb2 #ebdbb2 #cc241d
-client.placeholder      #50494f #3c3836 #a89984 #665c54 #3c3836
+client.placeholder      #504945 #3c3836 #928374 #665c54 #3c3836
 client.background       #282828
 
 
@@ -159,8 +160,8 @@ bar {
     statusline         #ebdbb2
     separator          #665c54 
     focused_workspace  #7c6f64 #665c54 #ebdbb2
-    active_workspace   #665c54 #50494f #ebdbb2
-    inactive_workspace #665c54 #50494f #83786e
+    active_workspace   #665c54 #504945 #ebdbb2
+    inactive_workspace #665c54 #504945 #928374
     urgent_workspace   #fb4934 #cc241d #ebdbb2
     binding_mode       #fb4934 #cc241d #ebdbb2
   }
