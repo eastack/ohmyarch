@@ -2,24 +2,20 @@
 	name = eastack
 	email = admin@eastack.me
 	signingkey = 0x7469ECED938EB26A
+
 [core]
 	quotepath = false
 	editor = nvim
+	autocrlf = input
+	pager = LESS='LRc --mouse' delta 
+
 [pull]
 	rebase = false
-[alias]
-        a = add
-        b = branch
-        c = commit
-        d = diff
-        f = fetch
-        g = grep
-        l = log
-        m = merge
-        o = checkout
-        p = pull
-        r = remote
-        s = status
-        w = whatchanged
+
 [init]
 	defaultBranch = main
+
+[delta]
+	navigate = true
+	side-by-side = true
+	syntax-theme = gruvbox-dark
