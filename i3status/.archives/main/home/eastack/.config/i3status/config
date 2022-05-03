@@ -60,6 +60,6 @@ memory {
 }
 
 volume master {
-  format = "🔘 %volume"
+  format = "📢 %volume"
   format_muted = "🔇 %volume"
 }
