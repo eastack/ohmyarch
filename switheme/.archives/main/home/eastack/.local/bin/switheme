@@ -39,8 +39,8 @@ bat_scheme_table = {
 rofi_scheme_table = bat_scheme_table
 
 fcitx_scheme_table = {
-        'Material-Color-Blue':
-        'Material-Color-Black'
+        'Nord-Dark':
+        'Nord-Light'
 }
 
 zathura_color_table = i3_color_table
