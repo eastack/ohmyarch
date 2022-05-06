@@ -1,8 +1,8 @@
-# Default terminal environment variables.
+# Variables
 env:
   TERM: xterm-256color
 
-# Font configuration
+# Fonts
 font:
   normal:
     family: JetBrains Mono
@@ -18,9 +18,10 @@ font:
     style: Bold Italic
   size: 13
 
+# Colors
 color_schemes:
+  # Gruvbox dark
   gruvbox_dark: &gruvbox_dark
-  # Colors (Gruvbox dark)
     primary:
       # hard contrast background - '#1d2021'
       background: '#282828'
@@ -68,9 +69,9 @@ color_schemes:
       magenta: '#8f3f71'
       cyan:    '#427b58'
       white:   '#928374'
-    # indexed_colors: []
+
+  # Gruvbox light
   gruvbox_light: &gruvbox_light
-  # Colors (Gruvbox dark)
     primary:
       # hard contrast background - '#f9f5d7'
       background: '#fbf1c7'
@@ -118,6 +119,5 @@ color_schemes:
       magenta: '#d3869b'
       cyan:    '#8ec07c'
       white:   '#ebdbb2'
-    # indexed_colors: []
 
 colors: *gruvbox_dark
