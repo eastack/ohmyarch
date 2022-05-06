@@ -9,11 +9,11 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 font pango:Hack 12
 title_align center
 default_border pixel 2
-client.focused          #7c6f64 #665c54 #ebdbb2 #458588 #665c54
+client.focused          #282828 #3c3836 #ebdbb2 #458588 #665c54
 client.focused_inactive #3c3836 #504945 #ebdbb2 #076678 #504945
-client.unfocused        #282828 #3c3836 #928374 #076678 #3c3836
+client.unfocused        #504945 #665c54 #a89984 #076678 #3c3836
 client.urgent           #cc241d #9d0006 #ebdbb2 #cc241d #9d0006
-client.placeholder      #282828 #3c3836 #928374 #076678 #3c3836
+client.placeholder      #504945 #665c54 #a89984 #076678 #3c3836
 client.background       #282828
 
 
