@@ -5,16 +5,32 @@ exec --no-startup-id xset s 300 5
 exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 
-# Appearence 
+# Appearence
 font pango:Hack 12
 title_align center
-default_border pixel 2
-client.focused          #282828 #3c3836 #ebdbb2 #458588 #665c54
-client.focused_inactive #3c3836 #504945 #ebdbb2 #076678 #504945
-client.unfocused        #504945 #665c54 #a89984 #076678 #3c3836
-client.urgent           #cc241d #9d0006 #ebdbb2 #cc241d #9d0006
-client.placeholder      #504945 #665c54 #a89984 #076678 #3c3836
+default_border pixel 0
+client.focused          #282828 #282828 #ebdbb2
+client.focused_inactive #282828 #282828 #a89984
+client.unfocused        #504945 #3c3836 #a89984
+client.urgent           #cc241d #9d0006 #ebdbb2
+client.placeholder      #504945 #3c3836 #a89984
 client.background       #282828
+
+bar {
+  status_command          i3status
+  strip_workspace_numbers yes
+
+  colors {
+    background         #3c3836
+    statusline         #ebdbb2
+    separator          #665c54
+    focused_workspace  #282828 #282828 #ebdbb2
+    active_workspace   #282828 #282828 #a89984
+    inactive_workspace #3c3836 #3c3836 #a89984
+    urgent_workspace   #cc241d #9d0006 #ebdbb2
+    binding_mode       #cc241d #9d0006 #ebdbb2
+  }
+}
 
 
 # Variables
@@ -133,36 +149,14 @@ bindsym $win+o exec chromium
 bindsym $win+i exec i3-sensible-terminal
 # application launcher
 bindsym $win+d exec "rofi -show combi"
-# switch binding mode
+
+
+# Modes
 bindsym $win+r mode resize
-bindsym $win+t mode theme
-
-mode theme {
-  bindsym d      exec switheme dark
-  bindsym l      exec switheme light
-  bindsym Escape mode default
-}
-
 mode resize {
   bindsym $up    resize grow   height 10 px or 5 ppt
   bindsym $down  resize shrink height 10 px or 5 ppt
   bindsym $left  resize grow   width  10 px or 5 ppt
   bindsym $right resize shrink width  10 px or 5 ppt
   bindsym Escape mode default
-}
-
-bar {
-  status_command          i3status
-  strip_workspace_numbers yes
-
-  colors {
-    background         #3c3836
-    statusline         #ebdbb2
-    separator          #665c54 
-    focused_workspace  #7c6f64 #665c54 #ebdbb2
-    active_workspace   #665c54 #504945 #ebdbb2
-    inactive_workspace #665c54 #504945 #928374
-    urgent_workspace   #cc241d #9d0006 #ebdbb2
-    binding_mode       #cc241d #9d0006 #ebdbb2
-  }
 }
