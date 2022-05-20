@@ -6,14 +6,14 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 
 # Appearence
-font pango:Hack 12
+font pango:Hack 12.5
 title_align center
-default_border pixel 0
-client.focused          #282828 #282828 #ebdbb2
-client.focused_inactive #282828 #282828 #a89984
-client.unfocused        #504945 #3c3836 #a89984
-client.urgent           #cc241d #9d0006 #ebdbb2
-client.placeholder      #504945 #3c3836 #a89984
+default_border pixel 2
+client.focused          #665c54 #504945 #ebdbb2 #427b58 #076678
+client.focused_inactive #665c54 #504945 #ebdbb2 #3c3836 #3c3836
+client.unfocused        #504945 #3c3836 #928374 #3c3836 #3c3836
+client.placeholder      #504945 #3c3836 #928374 #3c3836 #3c3836
+client.urgent           #cc241d #9d0006 #ebdbb2 #9d0006 #cc241d
 client.background       #282828
 
 bar {
@@ -24,9 +24,9 @@ bar {
     background         #3c3836
     statusline         #ebdbb2
     separator          #665c54
-    focused_workspace  #282828 #282828 #ebdbb2
-    active_workspace   #282828 #282828 #a89984
-    inactive_workspace #3c3836 #3c3836 #a89984
+    focused_workspace  #7c6f64 #665c54 #ebdbb2
+    active_workspace   #7c6f64 #665c54 #bdae93
+    inactive_workspace #665c54 #504945 #a89984
     urgent_workspace   #cc241d #9d0006 #ebdbb2
     binding_mode       #cc241d #9d0006 #ebdbb2
   }
