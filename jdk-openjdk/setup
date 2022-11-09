@@ -1,1 +1,2 @@
-setup $app openjdk-src openjdk-doc
+setup jdk-openjdk openjdk-src openjdk-doc 
+setup jdk8-openjdk openjdk8-doc openjdk8-src
