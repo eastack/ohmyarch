@@ -1,0 +1,2 @@
+setup rustup
+cargo install paru
