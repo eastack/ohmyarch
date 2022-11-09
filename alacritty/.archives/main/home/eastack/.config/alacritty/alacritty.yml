@@ -36,7 +36,7 @@ color_schemes:
       focused_match:
         foreground: CellBackground
         background: CellForeground
-      bar:
+      footer_bar:
         foreground: '#ebdbb2'
         background: '#3c3836'
     line_indicator:
@@ -86,7 +86,7 @@ color_schemes:
       focused_match:
         foreground: CellBackground
         background: CellForeground
-      bar:
+      footer_bar:
         foreground: '#3c3836'
         background: '#ebdbb2'
     line_indicator:
