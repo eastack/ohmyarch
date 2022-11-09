@@ -26,7 +26,7 @@ function clean() {
 function main() {
   for app (${2:-$(basename -a */)} ${@:3}) {
     pushd $app
-    [[ -n */(#qN) ]] && main $1 || source $1
+    if [[ -n */(#qN) ]] && main $1 || test -x $1 && source $1
     popd
   }
 }
