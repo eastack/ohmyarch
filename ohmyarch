@@ -1,46 +1,34 @@
 #!/usr/bin/env zsh
 
-setopt errexit
-setopt nounset
-setopt pipefail
-setopt extendedglob
-
-readonly ROOT=$(realpath $(dirname $0))
+setopt errexit nounset pipefail extendedglob
 
 function setup() {
-  sudo pacman -S --noconfirm --needed $@
+  sudo pacman -S --noconfirm --needed $(basename -a $@)
 }
 
 function backup() {
-  for archive ($@) {
-    for filepath ($(envsubst < $archive/file)) {
-      until [[ $filepath == / ]] echo ${filepath::=$filepath:h}
-    } | sort | uniq | getfacl -p - > $archive/facl
-    envsubst < $archive/file | sort | getfacl -pR - >> $archive/facl
-    envsubst < $archive/file | rsync -ar --files-from=- / $archive
-  }
+  for filepath ($(envsubst < .archive/file)) {
+    until [[ $filepath == / ]] echo ${filepath::=$filepath:h}
+  } | sort | uniq | getfacl -p - > .archive/facl
+  envsubst < .archive/file | sort | getfacl -pR - >> .archive/facl
+  envsubst < .archive/file | rsync -ar --files-from=- / .archive
 }
 
 function restore() {
-  for archive ($@) {
-    envsubst < $archive/file | sudo rsync -rl --files-from=- $archive /
-    sudo setfacl --restore=$archive/facl
-  }
+  envsubst < .archive/file | sudo rsync -rl --files-from=- .archive /
+  sudo setfacl --restore=.archive/facl
 }
 
 function clean() {
-  for archive ($@) {
-    rm -rf $archive/^file
-  }
+  rm -rf .archive/^file
 }
 
-function ohmyarch() {
-  local app
-  for app (${@:2}) {
-    pushd $ROOT/$app
-    test -x $1 && source $1
+function main() {
+  for app (${2:-$(basename -a */)} ${@:3}) {
+    pushd $app
+    [[ -n */(#qN) ]] && main $1 || source $1
     popd
   }
 }
 
-ohmyarch $1 ${2:-$(basename -a $ROOT/*/)} ${@:3}
+main $@
