@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+systemctl --user enable pipewire.service
+systemctl --user enable pipewire-pulse.service
