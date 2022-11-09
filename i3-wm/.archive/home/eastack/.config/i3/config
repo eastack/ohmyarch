@@ -6,9 +6,10 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 
 # Appearence
-font pango:Hack 12.5
-title_align center
-default_border pixel 2
+font                    pango:Hack 12.5
+title_align             center
+default_border          pixel 2
+hide_edge_borders       smart
 client.focused          #458588 #076678 #ebdbb2 #458588 #076678
 client.focused_inactive #665c54 #504945 #ebdbb2 #665c54 #504945
 client.unfocused        #504945 #3c3836 #a89884 #504945 #3c3836
