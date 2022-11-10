@@ -1,2 +1,2 @@
-setup rustup
+setup languages/rust/rustup
 cargo install paru

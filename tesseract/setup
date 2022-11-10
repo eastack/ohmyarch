@@ -1,3 +1,0 @@
-setup $app \
-  tesseract-data-chi_sim \
-  tesseract-data-eng
