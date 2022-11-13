@@ -1,26 +1,27 @@
 #!/usr/bin/env zsh
 
 setopt errexit nounset pipefail extendedglob
+readonly arch=.archive
 
 function setup() {
   sudo pacman -S --noconfirm --needed $(basename -a $@)
 }
 
 function backup() {
-  for filepath ($(envsubst < .archive/file)) {
-    until [[ $filepath == / ]] echo ${filepath::=$filepath:h}
-  } | sort | uniq | getfacl -p - > .archive/facl
-  envsubst < .archive/file | getfacl -pR - >> .archive/facl
-  envsubst < .archive/file | rsync -ar --files-from=- / .archive
+  for path ($(envsubst < $arch/file)) {
+    until [[ $path == / ]] echo ${path::=$path:h}
+  } | sort | uniq | getfacl -p - > $arch/facl
+  envsubst < $arch/file | getfacl -pR - >> $arch/facl
+  envsubst < $arch/file | rsync -ar --files-from=- / $arch
 }
 
 function restore() {
-  envsubst < .archive/file | sudo rsync -rl --files-from=- .archive /
-  sudo setfacl --restore=.archive/facl
+  envsubst < $arch/file | sudo rsync -rl --files-from=- $arch /
+  sudo setfacl --restore=$arch/facl
 }
 
 function clean() {
-  rm -rf .archive/^file
+  rm -rf $arch/^file
 }
 
 function main() {
