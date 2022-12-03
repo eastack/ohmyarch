@@ -1,0 +1,42 @@
+# file: /
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home
+# owner: root
+# group: root
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10
+# owner: radix10
+# group: radix10
+user::rwx
+group::---
+other::---
+
+# file: /home/radix10/.luarocks
+# owner: radix10
+# group: radix10
+user::rwx
+group::r-x
+other::r-x
+
+# file: /home/radix10/.luarocks/config.lua
+# owner: radix10
+# group: radix10
+user::rw-
+group::r--
+other::r--
+
+# file: /home/radix10/.luarocks/upload_config.lua
+# owner: radix10
+# group: radix10
+user::rw-
+group::r--
+other::r--
+
